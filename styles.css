@@ -1,0 +1,56 @@
+body {
+    background-color: #ffffff;
+  }
+
+
+a {
+  text-decoration: none;
+}
+
+#coverart {
+    height: 450px;
+    /* box-shadow: 10px 10px 2px 1px rgb(216, 208, 208); */
+  }
+
+#logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 666px;
+  height: 170px;
+  }
+
+.section {
+  margin-top: 50px;
+  white-space: nowrap;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1000px;
+}
+
+.song {
+  float: left;
+  margin-left: 50px;
+  margin-bottom: 25px;
+}
+
+.songbutton{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 18px;
+  background-color: #ffffff;
+  border: 0.5px solid black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+.songbutton:hover {
+    background-color: #116838; /* Green */
+    color: black;
+    border: 0.5px solid #116838;
+  }

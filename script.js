@@ -76,26 +76,26 @@ function showSlide(index) {
     currentSlide = index;
 }
 
-// Function to detect if the user is on a mobile device
-    function isMobileDevice() {
-        return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    }
+// // Function to detect if the user is on a mobile device
+//     function isMobileDevice() {
+//         return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+//     }
 
-    // Function to check screen orientation and toggle the rotate message
-    function checkOrientation() {
-        const rotateMessage = document.getElementById('rotate-message');
-        if (isMobileDevice() && window.innerWidth < window.innerHeight) {
-            // Show message for portrait mode on mobile devices
-            rotateMessage.style.display = 'flex';
-        } else {
-            // Hide the message otherwise
-            rotateMessage.style.display = 'none';
-        }
-    }
+//     // Function to check screen orientation and toggle the rotate message
+//     function checkOrientation() {
+//         const rotateMessage = document.getElementById('rotate-message');
+//         if (isMobileDevice() && window.innerWidth < window.innerHeight) {
+//             // Show message for portrait mode on mobile devices
+//             rotateMessage.style.display = 'flex';
+//         } else {
+//             // Hide the message otherwise
+//             rotateMessage.style.display = 'none';
+//         }
+//     }
 
-    // Add event listeners for screen orientation changes and page load
-    window.addEventListener('resize', checkOrientation);
-    window.addEventListener('load', checkOrientation);
+//     // Add event listeners for screen orientation changes and page load
+//     window.addEventListener('resize', checkOrientation);
+//     window.addEventListener('load', checkOrientation);
 
 /***
  * Creates slides for a popup based on info.

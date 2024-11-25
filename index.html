@@ -1,50 +1,231 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-<title>cheryl tugade</title>
-<link rel="stylesheet" href="styles.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<img src="artistlogo.png" id="logo">
+    <!-- Splash Page -->
+    <div class="splash-container">
+        <p class="splash-text">I'm Cheryl, a computer science major and music artist who loves creating stuff.</p>
+        <img src="media/icons/enter.png" alt="Welcome" id="splash-image">
+    </div>
 
-<!-- MUSIC -->
+    <div id="rotate-message">
+        <p class="rotate-text">Please rotate your device</p>
+        <img src="media/rotate-phone.gif" alt="Rotate your phone" id="splash-image">
+    </div>
 
-<div class="section">
+    <!-- Main Page -->
+    <div class="background">   
+        <div class="room">
+            <div class="tutorial-container">
+                <div class="tutorial-content">
+                    <p class="tutorial-title">Welcome to Cheryl's World!</p>
+                    <p class="tutorial-text">Click on objects to explore my work.<br>For the best experience, view in full-screen.</p>
+                    <button class="gotit-btn"><img src="media/icons/gotit.png" alt="Got it!" class="btn-icon"></button>
+                </div>
+            </div>  
+            <!-- Room Background -->
+            <video autoplay muted loop playsinline class="room-video">
+                <source src="media/background.mp4" type="video/mp4"> Your browser does not support the video tag.
+            </video>
 
-  <div class="song">
-    <img src="decembercoverart.jpg" id="coverart">
-    <a href='https://cheryltugade.lnk.to/December'><button class="songbutton">LISTEN NOW</button></a>
-  </div>
+            <!-- Sound Effects -->
+            <audio id="hover-sound-welcome-mat" src="media/sound_effects/welcomemat.mp3" preload="auto"></audio>
+            <audio id="hover-sound-drawing" src="media/sound_effects/drawing.mp3" preload="auto"></audio>
+            <audio id="hover-sound-notebook" src="media/sound_effects/notebook.mp3" preload="auto"></audio>
+            <audio id="hover-sound-puzzle" src="media/sound_effects/puzzle.mp3" preload="auto"></audio>
+            <audio id="hover-sound-record-player" src="media/sound_effects/recordplayer.mp3" preload="auto"></audio>
+            <audio id="hover-sound-tv" src="media/sound_effects/tv.mp3" preload="auto"></audio>
+            <audio id="hover-sound-whack-a-mole" src="media/sound_effects/whackamole.mp3" preload="auto"></audio>
 
-  <div class="song">
-    <img src="thinkofyoucoverart.jpg" id="coverart">
-    <a href='https://cheryltugade.lnk.to/ThinkofYou'><button class="songbutton">LISTEN NOW</button></a>
-  </div>
+            <!-- Welcome Mat -->
+             <!--   -->
+            <svg class="object" id="welcome-mat" viewBox="0 0 1183 516" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-welcome-mat" data-info='[
+                    {"title": "Hi! I’m Cheryl Tugade.",
+                    "text": "I love creating stuff, whether it’s through code, music, or something else. My goal is to create worlds where people can feel safe, seen, and that they belong.",
+                    "image": "media/profile_picture.jpg",
+                    "image_orientation": "portrait",
+                    "link": "https://www.linkedin.com/in/cheryl-tugade-261516180/"}
+                ]'>
+                <image href="media/objects//welcomemat.png" />
+            </svg>
 
-  <div class="song">
-    <img src="honestcoverart.jpg" id="coverart">
-    <a href='https://cheryltugade.lnk.to/Honest'><button class="songbutton">LISTEN NOW</button></a>
-  </div>
+            <!-- Whack-a-mole -->
+            <svg class="object" id="whack-a-mole" viewBox="0 0 688 991" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-whack-a-mole" data-info='[
+                    {"title": "jericho! improv",
+                    "text": "I’m part of <a href=\"https://sites.google.com/berkeley.edu/jerichoimprov/home\" target=\"_blank\">jericho! improv & sketch comedy</a>, UC Berkeley’s oldest improv and sketch comedy team.",
+                    "image": "media/whackamole_popup/jerichobanner.jpg",
+                    "image_orientation": "landscape",
+                    "link": "https://sites.google.com/berkeley.edu/jerichoimprov/home"},
+                    {"title": "Standup Set",
+                    "text": "My five-minute stand up set at West Side Comedy Club.", 
+                    "youtube_link": "https://www.youtube.com/embed/ng4yCfxj9yw?si=egSuOY5ismL-lKy9"},
+                    {"title": "Date Aiden",
+                    "text": "We go around UC Berkeley trying to find a date for our friend Aiden. Written, filmed, and edited by me.", 
+                    "youtube_link": "https://www.youtube.com/embed/4PdxSgueS9k?si=5OlVEEAnmne6bqdS"},
+                    {"title": "Romance on the 51B",
+                    "text": "A girl thinks a stranger on the bus is in love with her. Written, directed, and edited by me.", 
+                    "youtube_link": "https://www.youtube.com/embed/NRYVqhU-F3s?si=bx5nFqHco3cpF9-y"}
+                ]'>
+                <image href="media/objects/whackamole.png" />
+            </svg>
 
-  <div class="song">
-    <img src="backseatcoverart.jpg" id="coverart">
-    <a href='https://cheryltugade.lnk.to/Backseat'><button class="songbutton">LISTEN NOW</button></a>
-  </div>
+            <!-- Record Player -->
+            <svg class="object" id="record-player" viewBox="0 0 745 583" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-record-player" data-info='[
+                    {"title": "December",
+                    "text": "A song about missing my friends from back home. Written, performed, and co-produced by me.",
+                    "spotify_link": "https://open.spotify.com/embed/track/4Z69VsztWnCw7whBorLVfL?utm_source=generator"},
+                    {"title": "Backseat",
+                    "text": "A song about feeling lonely even though you’re surrounded by people. Written, performed, and co-produced by me.", 
+                    "spotify_link": "https://open.spotify.com/embed/track/0J1Q4oT4eW3oaTMVa16qsM?utm_source=generator"},
+                    {"title": "Think of You",
+                    "text": "A song about reminiscing over an ex. Written, performed, and co-produced by me.", 
+                    "spotify_link": "https://open.spotify.com/embed/track/1ZRRictIZqY640Jog3gbQg?utm_source=generator"},
+                    {"title": "Human Like You",
+                    "text": "A rap song and the first song I ever released. Written, performed, and produced by me.", 
+                    "spotify_link": "https://open.spotify.com/embed/track/4ZS8ZgDfl0h9v8D4uYB3h2?utm_source=generator"},
+                    {"title": "Not Alone",
+                    "text": "A song I wrote for a friend who was struggling with depression. Written, performed, and produced by me.", 
+                    "spotify_link": "https://open.spotify.com/embed/track/15SzCx7pQYkhJxbY9m7tzr?utm_source=generator"},
+                    {"title": "Spotify and Apple Music",
+                    "text": "For more, check out my <a href=\"https://open.spotify.com/artist/1GaT496vPnyxc8p4jbjK96\" target=\"_blank\">Spotify</a> and <a href=\"https://music.apple.com/us/artist/cheryl-tugade/1397736479\" target=\"_blank\">Apple Music</a>.", 
+                    "image": "media/record_player_popup/spotify.png",
+                    "image_orientation": "portrait",
+                    "link": "https://open.spotify.com/artist/1GaT496vPnyxc8p4jbjK96"}
+                ]'>
+                <image href="media/objects/recordplayer.png" />
+            </svg>
 
-  <div class="song">
-    <img src="sorryforwhoiamcoverart.jpg" id="coverart">
-    <a href='https://open.spotify.com/track/67fn8FJc9ysP4I3S1pT7zj?si=a5c88cb586c646bc'><button class="songbutton">LISTEN NOW</button></a>
-  </div>
+            <!-- Drawing -->
+            <svg class="object" id="drawing" viewBox="0 0 706 862" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-drawing" data-info='[
+                    {"title": "Drawing - 11/7/21", 
+                    "image_orientation": "landscape",
+                    "image": "media/drawing_popup/drawing1.jpg"},
+                    {"title": "Drawing - 1/3/22",
+                    "image_orientation": "landscape", 
+                    "image": "media/drawing_popup/drawing2.jpg"},
+                    {"title": "Drawing - 6/22", 
+                    "image_orientation": "portrait",
+                    "image": "media/drawing_popup/drawing3.jpg"},
+                    {"title": "Drawing - 6/22", 
+                    "image_orientation": "portrait",
+                    "image": "media/drawing_popup/drawing4.jpg"},
+                    {"title": "Drawing - 10/4/23", 
+                    "image_orientation": "landscape",
+                    "image": "media/drawing_popup/drawing5.jpg"},
+                    {"title": "Drawing - 10/28/23", 
+                    "image_orientation": "landscape",
+                    "image": "media/drawing_popup/drawing6.jpg"},
+                    {"title": "Drawing - 10/24", 
+                    "image_orientation": "landscape",
+                    "image": "media/drawing_popup/drawing7.jpg"},
+                    {"title": "Drawing 11/3/24", 
+                    "image_orientation": "portrait",
+                    "image": "media/drawing_popup/drawing8.jpg"}
+                ]'>
+                <image href="media/objects/drawing.png" />
+            </svg>
 
-  <div class="song">
-    <img src="notalonecoverart.jpg" id="coverart">
-    <a href='https://open.spotify.com/track/15SzCx7pQYkhJxbY9m7tzr?si=ffb5ef5278d0465e'><button class="songbutton">LISTEN NOW</button></a>
-  </div>
+            <!-- TV -->
+            <svg class="object" id="tv" viewBox="0 0 564 986" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-tv" data-info='[
+                    {"title": "Sofar Sounds SF",
+                    "text": "Performing ‘Backseat’ at a Sofar Sounds SF show in North Beach.", 
+                    "youtube_link": "https://www.youtube.com/embed/884d6uevGto?si=aJ3otr9i0wAxMfN7"},
+                    {"title": "Hub 17 NYC",
+                    "text": "Performing ‘Back There’ at Hub 17, an art gallery in NYC.", 
+                    "youtube_link": "https://www.youtube.com/embed/SSba4est4xQ?si=06mprsnrXZ4aM5VQ"},
+                    {"title": "Rock Show",
+                    "text": "My first performance as a music artist. Performing ‘Human Like You’, an original rap song at Rock Show.", 
+                    "youtube_link": "https://www.youtube.com/embed/ygp47Isii80?si=KRbOk0Go1OuXbOo_"},
+                    {"title": "Just For Fun",
+                    "text": "Rapping Eminem’s Rap God supersonic verse at 1.5x speed while my little brother shows us his hot wheels.", 
+                    "youtube_link": "https://www.youtube.com/embed/o1XreVWPo_I?si=IUtzbtbY_S35DY5p"},
+                    {"title": "YouTube",
+                    "text": "For more, check out my <a href=\"https://www.youtube.com/@cheryltugade2849\" target=\"_blank\">YouTube.</a>", 
+                    "image": "media/tv_popup/youtube.png",
+                    "image_orientation": "landscape",
+                    "link": "https://www.youtube.com/@cheryltugade2849"}
+                ]'>
+                <image href="media/objects/tv.png" />
+            </svg>
 
-  <div class="song">
-    <img src="humanlikeyoucoverart.jpg" id="coverart">
-    <a href='https://open.spotify.com/track/4ZS8ZgDfl0h9v8D4uYB3h2?si=453ba946fa3b44bc'><button class="songbutton">LISTEN NOW</button></a>
-  </div>
+            <!-- Puzzle -->
+            <svg class="object" id="puzzle" viewBox="0 0 316 423" preserveAspectRatio="xMidYMid meet"preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-puzzle" data-info='[
+                {"title": "Figma - Billing Emails Revamp",
+                    "text": "I increased the speed of a critical customer billing email job by 5x and coded a self-serve dashboard so teams can access billing email copies 60x faster.", 
+                    "image": "media/puzzle_popup/figma.png",
+                    "image_orientation": "landscape",
+                    "link": "https://www.figma.com/"},
+                    {"title": "Nextdoor Ads Manager - Feature Flag Tool",
+                    "text": "I built a feature flag tool that will grow ads revenue and save the company hundreds of hours through the ability to turn features on and off with one click.", 
+                    "image": "media/puzzle_popup/nextdoor.jpg",
+                    "image_orientation": "landscape",
+                    "link": "https://nextdoor.com/"},
+                    {"title": "Guess Who Sent the Text",
+                    "text": "I coded a game for two people who text a lot. The game displays random texts between the two people, and you have to guess who sent the text. Check out the <a href=\"https://github.com/cheryltugade/GuessWhoSentTheText\" target=\"_blank\">code</a>.", 
+                    "image": "media/puzzle_popup/gwstt.gif",
+                    "image_orientation": "landscape",
+                    "link": "https://github.com/cheryltugade/GuessWhoSentTheText"},
+                    {"title": "Cheryl’s World",
+                    "text": "I designed and coded this website using Figma, HTML/CSS and JavaScript. Check out the <a href=\"https://github.com/cheryltugade/cherylsworld\" target=\"_blank\">code</a>.", 
+                    "image": "media/puzzle_popup/cherylsworld.gif",
+                    "image_orientation": "landscape",
+                    "link": "https://github.com/cheryltugade/cherylsworld"},
+                    {"title": "Resume",
+                    "text": "For more, check out my <a href=\"https://drive.google.com/file/d/1h2z4dq5Yd7PoHkhJWjIT3gKauT6gn8du/view?usp=sharing\" target=\"_blank\">resume</a>.", 
+                    "image": "media/puzzle_popup/resume.jpg",
+                    "image_orientation": "portrait",
+                    "link": "https://drive.google.com/file/d/1h2z4dq5Yd7PoHkhJWjIT3gKauT6gn8du/view?usp=sharing"}
+                ]'>
+                <image href="media/objects/puzzle.png" />
+            </svg>
 
-</div>
+            <!-- Notebook -->
+             <!--           -->
+            <svg class="object" id="notebook" viewBox="0 0 251 209" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-notebook" data-info='[
+                    {"title": "Tucker Bryant: He Left Google to Be a Poet",
+                    "text": "I interview a guy who left Product Marketing at Google to be a poet and keynote speaker. Check out the <a href=\"https://cheryltugade.medium.com/tucker-bryant-he-left-google-to-be-a-poet-4e75d09187c9\" target=\"_blank\">article</a>.",
+                    "image": "media/notebook_popup/tucker.jpg",
+                    "image_orientation": "portrait",
+                    "link": "https://cheryltugade.medium.com/tucker-bryant-he-left-google-to-be-a-poet-4e75d09187c9"},
+                    {"title": "Derek Chung: From Tech to Poke Franchise Entrepreneur",
+                    "text": "I interview a guy who left tech to start his own poke bowl franchise. Check out the <a href=\"https://cheryltugade.medium.com/derek-chung-from-tech-to-poke-franchise-entrepreneur-a31e87d0697e\" target=\"_blank\">article</a>.", 
+                    "image": "media/notebook_popup/derek.jpg",
+                    "image_orientation": "portrait",
+                    "link": "https://cheryltugade.medium.com/derek-chung-from-tech-to-poke-franchise-entrepreneur-a31e87d0697e"},
+                    {"title": "Chelsea Chan: Music Artist and Web Developer",
+                    "text": "I interview a music artist and web developer on how she balances creative work with a 9-to-5. Check out the <a href=\"https://medium.com/@cheryltugade/chelsea-chan-music-artist-and-web-developer-be43c52d930a\" target=\"_blank\">article</a>.", 
+                    "image": "media/notebook_popup/chelsea.jpg",
+                    "image_orientation": "portrait",
+                    "link": "https://medium.com/@cheryltugade/chelsea-chan-music-artist-and-web-developer-be43c52d930a"}
+                ]'>
+                <image href="media/objects/notebook.png" />
+            </svg>
+
+            <!-- Popup -->
+            <div class="info-popup" id="popup">
+                <button class="close-btn">
+                    <img src="media/icons/cross.png" alt="Previous" class="btn-icon">
+                </button>
+                <div id="popup-slides"></div>
+                <div class="popup-nav">
+                    <button class="nav-btn prev-btn">
+                        <img src="media/icons/leftarrow.png" alt="Previous" class="btn-icon">
+                    </button>
+                    <button class="nav-btn next-btn">
+                        <img src="media/icons/rightarrow.png" alt="Previous" class="btn-icon">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<script src="script.js"></script>
+</body>
+
+</html>

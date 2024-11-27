@@ -544,7 +544,7 @@ ol {
 }
 
 /* Rotate message styling */
-/* #rotate-message {
+#rotate-message {
     position: fixed;
     top: 0;
     left: 0;
@@ -553,8 +553,6 @@ ol {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     display: none;
-    opacity: 0;
-    visibility: hidden;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -571,4 +569,4 @@ ol {
     #rotate-message {
         display: flex;
     }
-} */
+}

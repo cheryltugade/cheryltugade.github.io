@@ -316,7 +316,6 @@ ol {
     transform: translate(-50%, -50%);
     padding: 0 10px;
     box-sizing: border-box;
-    border: 2px solid red;
     pointer-events: none;
 }
 

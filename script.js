@@ -135,7 +135,7 @@ function createSlides(info) {
         if (slide.link && slide.image) {
             slideContent += `
                 <a class="popup-link" id="${slide.image_orientation}"href="${slide.link}" target="_blank">
-                    <img class="popup-link-image" id ="${slide.image_orientation}" src="${slide.image}" alt="Slide ${index + 1}">
+                    <img class="popup-linked-image" id ="${slide.image_orientation}" src="${slide.image}" alt="Slide ${index + 1}">
                 </a>
             `;
         } else if (slide.image) {
@@ -144,13 +144,8 @@ function createSlides(info) {
             `;
         }
 
-        // Add the text if it exists
         if (slide.text) {
             slideContent += `<p class="popup-text">${slide.text.replace(/\n/g, '<br>')}</p>`;
-        }
-
-        if (slide.long_text) {
-            slideContent += `<p class="popup-long-text">${slide.long_text.replace(/\n/g, '<br>')}</p>`;
         }
 
         slideDiv.innerHTML = slideContent;
@@ -239,4 +234,28 @@ window.addEventListener('click', function(event) {
 document.querySelector('.gotit-btn').addEventListener('click', () => {
     const tutorialContainer = document.querySelector('.tutorial-container');
     tutorialContainer.style.display = 'none';
+});
+
+document.querySelectorAll('.hidden-object').forEach(object => {
+    object.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const objectId = object.getAttribute('id');
+        const speechBubble = document.querySelector('.speech-bubble');
+        if (objectId == "couch") {
+            speechBubble.style.left = '54%'
+            speechBubble.style.bottom = '36%'
+        } else if (objectId == "clock") {
+            speechBubble.style.left = '14%'
+            speechBubble.style.bottom = '74%'
+        } else if (objectId == "light") {
+            speechBubble.style.left = '54%'
+            speechBubble.style.bottom = '82%'
+        }
+
+        speechBubble.style.visibility = 'visible';
+
+        setTimeout(() => {
+            speechBubble.style.visibility = 'hidden';
+        }, 1250);
+    });
 });

@@ -2,17 +2,12 @@
  * This sheet determines the styling of Cheryl's World.
  */
 
-:root {
-    --scale: 1
-    --base-size: 1;
-}
-
 body {
     background: black;
 }
 
 /***
- * Room, background, and objects
+ * Background, room, and objects
  */
 .background {
     background: black;
@@ -116,37 +111,63 @@ body {
     bottom: 32%;
 }
 
+.hidden-object {
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+}
+
+.speech-bubble {
+    position: absolute;
+    max-width: 15%;
+    height: auto;
+    width: auto;
+    visibility: hidden;
+    animation: jingle 0.5s ease-in-out;
+}
+
+#clock {
+    width: 7%;
+    left: 6%;
+    bottom: 66.2%;
+}
+
+#light {
+    width: 9.5%;
+    left: 44%;
+    bottom: 79.5%;
+}
+
+#couch {
+    width: 21.6%;
+    left: 32.2%;
+    bottom: 28%;
+}
+
 /***
  * Popups
  */
 
- .info-popup {
-    /* Position */
+.info-popup {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Appearance */
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-    /* Size */
     width: 80%;
     height: 80%;
-    /* Visibility */
-    /* z-index: 1000; */
-    overflow: hidden; /* Prevent content overflow */
-    /* Flex */
-    display: flex; /* Make the container a flexbox */
-    justify-content: center; /* Horizontally center content */
-    align-items: center; /* Vertically center content */
-      /* Add red border */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
 .popup-slide {
-    display: none; /* Hidden by default */
+    display: none;
 }
 
 .popup-slide.active {
@@ -155,13 +176,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* space between */
-
     width: 80%;
     height: 100%;
     left: 50%;
     transform: translate(-50%, 0%);
-
     overflow: hidden;
     object-fit: contain;
 }
@@ -177,10 +195,15 @@ body {
     border-radius: 0.5vw;
 }
 
-.popup-link-image {
+.popup-linked-image {
     transition: transform 0.3s ease, filter 0.3s ease;
     object-fit: contain;
     border-radius: 0.5vw;
+}
+
+.popup-linked-image:hover {
+    filter: brightness(0.9);
+    transform: scale(1.1);
 }
 
 .popup-video {
@@ -192,28 +215,9 @@ body {
     height: 20vw;
 }
 
-/* .popup-spotify-embed {
-    /* 
-    display: block;
-    border-style:none;
-    object-fit: contain; */
-    /* border-radius: 0.5vw; */
-    /* display: block; */
-    /* position: absolute; */
-    /* cursor: pointer; */
-    /* width: 300px;
-    height: 300px; */ /*
-} */
-
-.popup-link-image:hover {
-    filter: brightness(0.9);
-    transform: scale(1.1);
-}
-
 .popup-title {
     font-family: "Pangolin", serif;
     font-weight: bold;
-    
     font-size: min(3vw, 3vh);
     color: #333;
     text-align: center;
@@ -236,21 +240,6 @@ body {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
-}
-
-.popup-long-text {
-    font-family: "Source Sans 3", sans-serif;
-    font-size: min(1.85vw, 1.85vh);
-    line-height: 1.4;
-    color: #666;
-    text-align: center;
-    max-width: 80%;
-    max-height: 20%;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    margin: none;
 }
 
 .popup-link {
@@ -289,9 +278,9 @@ body {
     max-width: 70%;
     height: auto;
 }
+
 ol {
     font-family: "Source Sans 3", sans-serif;
-      /* Add red border */
     font-size: min(1.2vw, 1.2vh);
     line-height: 1.4;
     color: #666;
@@ -376,6 +365,9 @@ ol {
     transform: scale(1.25);
 }
 
+/***
+ * Splash page
+ */
 .splash-container {
     display: flex;
     flex-direction: column;
@@ -458,8 +450,9 @@ ol {
     margin-bottom: 15px;
 }
 
-/* Tutorial Container */
-
+/***
+ * Tutorial apge
+ */
 .tutorial-container {
     position: fixed;
     top: 0;
@@ -473,8 +466,7 @@ ol {
     opacity: 0;
     visibility: hidden;
     z-index: 9999;
-    padding-bottom: 60px; /* Adjust as needed to create space for the button */
-      /* Add red border */
+    padding-bottom: 60px;
     transition: opacity 1s ease;
 }
 
@@ -486,7 +478,6 @@ ol {
     text-align: center;
     max-width: 40%;
     max-height: 50%;
-    /* max-width: 400px; */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transform: scale(0.8);
     display: flex;
@@ -496,11 +487,9 @@ ol {
     position: relative;
 }
 
-/* Title and Text */
 .tutorial-title {
     font-size: min(4vw, 4vh);
     font-family: "Pangolin", serif;
-    /* line-height: 1.6; */
     color: black;
     margin: 0;
 }
@@ -510,10 +499,8 @@ ol {
     font-family: "Source Sans 3", sans-serif;
     line-height: 1.6;
     color: black;
-    /* margin-bottom: 15px; */
 }
 
-/* Button */
 .gotit-btn {
     position: relative;
     bottom: 0;
@@ -524,28 +511,13 @@ ol {
 }
 
 .gotit-btn:hover {
-    /* background: grey;
-    color: white; */
     filter: brightness(0.8);
     transform: scale(1.1);
 }
 
-#close-tutorial {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    background: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-#close-tutorial:hover {
-    background: #0056b3;
-}
-
-/* Rotate message styling */
+/***
+ * Rotate Message
+ */
 #rotate-message {
     position: fixed;
     top: 0;

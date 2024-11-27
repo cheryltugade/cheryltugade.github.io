@@ -428,6 +428,8 @@ ol {
     opacity: 0;  /* Hidden initially */
     animation: none; /* No animation initially */
     transition: filter 0.3s ease; /* Smooth filter transitions */
+    width: 35%;
+    height: 'auto';
 }
 
 /* Trigger the bounce-in animation */
@@ -554,6 +556,7 @@ ol {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     display: none;
+    visibility: hidden;
     align-items: center;
     justify-content: center;
     text-align: center;

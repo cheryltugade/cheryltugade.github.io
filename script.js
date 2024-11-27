@@ -81,17 +81,19 @@ function showSlide(index) {
         return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     }
 
-    // Function to check screen orientation and toggle the rotate message
     function checkOrientation() {
         const rotateMessage = document.getElementById('rotate-message');
+        console.log('isMobileDevice:', isMobileDevice());
+        console.log('innerWidth:', window.innerWidth, 'innerHeight:', window.innerHeight);
+        
         if (isMobileDevice() && window.innerWidth < window.innerHeight) {
-            // Show message for portrait mode on mobile devices
+            rotateMessage.style.visibility = 'visible';
             rotateMessage.style.display = 'flex';
         } else {
-            // Hide the message otherwise
             rotateMessage.style.display = 'none';
         }
     }
+    
 
     // Add event listeners for screen orientation changes and page load
     window.addEventListener('resize', checkOrientation);

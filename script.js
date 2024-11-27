@@ -120,7 +120,7 @@ function createSlides(info) {
 
         if (slide.youtube_link) {
             slideContent += `
-                <div style="left: 0; width: 75%; height: 0; position: relative; padding-bottom: 42.1875%;"><iframe src="${slide.youtube_link}" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; border-radius: 8px; z-index: 1000;" allowfullscreen scrolling="no" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"></iframe></div>
+                <div style="left: 0; width: 75%; height: 0; position: relative; padding-bottom: 42.1875%;"><iframe src="${slide.youtube_link}" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; border-radius: 8px; allowfullscreen scrolling="no" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"></iframe></div>
             `;
         }
 

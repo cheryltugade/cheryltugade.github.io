@@ -259,12 +259,12 @@ body {
     width: auto;
 }
 
-.popup-link-image#landscape{
+.popup-linked-image#landscape{
     width: 60%;
     height: auto;
 }
 
-.popup-link-image#portrait{
+.popup-linked-image#portrait{
     height: 100%;
     width: auto;
 }

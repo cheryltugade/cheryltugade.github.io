@@ -83,8 +83,6 @@ function showSlide(index) {
 
     function checkOrientation() {
         const rotateMessage = document.getElementById('rotate-message');
-        console.log('isMobileDevice:', isMobileDevice());
-        console.log('innerWidth:', window.innerWidth, 'innerHeight:', window.innerHeight);
         
         if (isMobileDevice() && window.innerWidth < window.innerHeight) {
             rotateMessage.style.visibility = 'visible';
@@ -248,10 +246,23 @@ document.querySelectorAll('.hidden-object').forEach(object => {
             speechBubble.style.left = '14%'
             speechBubble.style.bottom = '74%'
         } else if (objectId == "light") {
-            speechBubble.style.left = '54%'
-            speechBubble.style.bottom = '82%'
-        }
+            const videoSource = document.getElementById('video-source');
+            const video = document.querySelector('.room-video');
+            const lightImageSource = document.getElementById('light-image-source');
 
+            if (videoSource.src.includes('media/background-night.mp4')) {
+                videoSource.src = 'media/background-day.mp4';
+                lightImageSource.setAttribute('href', 'media/objects/light-day.png');
+            } else if (videoSource.src.includes('media/background-day.mp4')) {
+                videoSource.src = 'media/background-night.mp4';
+                lightImageSource.setAttribute('href', 'media/objects/light-night.png');
+            }                
+            
+            // Reload the video
+            video.load();
+            video.play();
+            return
+        }
         speechBubble.style.visibility = 'visible';
 
         setTimeout(() => {

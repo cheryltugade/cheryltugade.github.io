@@ -38,7 +38,7 @@
 
             <!-- Room Background -->
             <video autoplay muted loop playsinline class="room-video">
-                <source src="media/background.mp4" type="video/mp4"> Your browser does not support the video tag.
+                <source src="media/background-day.mp4" type="video/mp4" id="video-source"> Your browser does not support the video tag.
             </video>
 
             <!-- Sound Effects -->
@@ -193,7 +193,7 @@
             </svg>
 
             <!-- Notebook -->
-            <svg class="object" id="notebook" viewBox="0 0 251 209" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-notebook" data-info='[
+            <svg class="object" id="notebook" viewBox="0 0 249 221" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-notebook" data-info='[
                     {"title": "Tucker Bryant: He Left Google to Be a Poet",
                     "text": "I interview a guy who left Product Marketing at Google to be a poet and keynote speaker. Check out the <a href=\"https://cheryltugade.medium.com/tucker-bryant-he-left-google-to-be-a-poet-4e75d09187c9\" target=\"_blank\">article</a>.",
                     "image": "media/notebook_popup/tucker.jpg",
@@ -228,10 +228,8 @@
             </svg>
 
             <!-- Light -->
-            <svg class="hidden-object" id="light" viewBox="0 0 467 213" preserveAspectRatio="xMinYMid meet" data-info='[
-                    {"title": "Nice try… nothing here sadly :("}
-                ]'>
-                <image href="media/objects/light.png" />
+            <svg class="hidden-object" id="light" viewBox="0 0 467 213" preserveAspectRatio="xMinYMid meet" data-info='[]'>
+                <image href="media/objects/light-day.png" id="light-image-source"/>
             </svg>
 
             <!-- Speech Bubble -->
@@ -258,7 +256,7 @@
     </div>
     
     <script src="script.js"></script>
-    
+
 </body>
 
 </html>

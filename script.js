@@ -234,6 +234,10 @@ document.querySelector('.gotit-btn').addEventListener('click', () => {
     tutorialContainer.style.display = 'none';
 });
 
+window.addEventListener("resize", () => {
+    document.body.style.height = `${window.innerHeight}px`;
+});
+
 document.querySelectorAll('.hidden-object').forEach(object => {
     object.addEventListener('click', (e) => {
         e.stopPropagation();

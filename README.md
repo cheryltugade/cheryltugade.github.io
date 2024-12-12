@@ -2,6 +2,6 @@
 
 Cheryl's World is an interactive portfolio website where users can click on objects in a room to explore my work.
 
-![CherylsWorldDemo-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/73cc34fb-539a-4322-8931-4cfba7413f32)
+![vid-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/8a29da25-d63d-48f6-a2d8-c6e8587e0958)
 
 Explore here: [https://cheryltugade.github.io/](https://cheryltugade.github.io)

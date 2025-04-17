@@ -1,5 +1,5 @@
 /***
- * This script runs the interactive elements of Cheryl's World.
+ * This script runs the interactive elements of Cheryl's Room of Useless Projects.
  */
 
 let currentSlide = 0;

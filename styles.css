@@ -180,7 +180,7 @@ body {
 }
 
 .popup-title {
-    font-family: "Pangolin", serif;
+    font-family: "HanziPen SC", sans-serif;
     font-weight: bold;
     font-size: min(3vw, 3vh);
     color: #333;
@@ -445,7 +445,7 @@ body {
     padding-left: 10%;
     padding-right: 10%;
     padding-bottom: 1%;
-    font-family: "Pangolin", serif;
+    font-family: "HanziPen SC", sans-serif;
     font-style: normal;
     font-weight: bold;
     line-height: 1.6;
@@ -491,7 +491,7 @@ body {
 
 .tutorial-title {
     font-size: min(4vw, 4vh);
-    font-family: "Pangolin", serif;
+    font-family: "HanziPen SC", sans-serif;
     color: black;
     margin: 0;
 }
@@ -535,10 +535,12 @@ body {
     text-align: center;
     z-index: 9999;
     flex-direction: column;
+    padding: 2rem; /* Add space inside the container */
+    box-sizing: border-box; /* Makes padding not affect width/height */
 }
 
 .rotate-text {
-    font-family: "Pangolin", serif;
+    font-family: "HanziPen SC", sans-serif;
     font-size: min(8vw, 8vh);
 }
 

@@ -325,11 +325,11 @@ body {
     transform: translate(-50%, -50%);
     padding: 0 10px;
     box-sizing: border-box;
-    pointer-events: none;
+    pointer-events: none; /* Disable pointer events for container */
 }
 
 .nav-btn {
-    pointer-events: auto;
+    pointer-events: auto;  /* Re-enable for buttons */
     background: none;
     border: none;
     width: 40px;
@@ -385,12 +385,35 @@ body {
     transform: scale(1.25);
 }
 
+.slide-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.slide-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: gray;
+    opacity: 0.5;
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+.slide-dots .dot.active {
+    opacity: 1;
+    background-color: white;
+}
+
+    
 /***
  * Splash Page
  */
 .splash-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -419,38 +442,52 @@ body {
     }
 }
 
-.splash-container img {
+#splash-enter-btn {
     cursor: pointer;
     opacity: 0;
     animation: none;
     transition: filter 0.3s ease;
-    width: 35%;
-    height: 'auto';
+    height: 10%;
+    width: auto;
 }
 
-.splash-container img:hover {
+#splash-prof-image {
+    max-height: 40%;
+    width: auto;
+}
+
+#splash-enter-btn:hover {
     filter: brightness(0.7);
     transform: scale(1.1)
 }
 
-.splash-container img.bounce-in {
+#splash-enter-btn.bounce-in {
     opacity: 1;
     animation: bounceIn 0.5s ease forwards;
 }
 
-.splash-text {
-    font-size: max(3vw, 3.5vh);
-    max-width: 100%;
+.splash-title {
+    font-size: max(3.5vw, 5vh);
+    max-width: 50%;
     height: auto;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 1%;
     font-family: "HanziPen SC", sans-serif;
     font-style: normal;
     font-weight: bold;
-    line-height: 1.6;
+    line-height: 1;
     color: white;
-    margin-bottom: 15px;
+    margin-bottom: 17.5px;
+}
+
+.splash-text {
+    font-size: max(1.5vw, 2vh);
+    max-width: 50%;
+    height: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    font-family: "Open Sans 3", sans-serif;
+    font-style: normal;
+    line-height: 1.5;
+    color: white;
 }
 
 /***
@@ -537,6 +574,7 @@ body {
     flex-direction: column;
     padding: 2rem; /* Add space inside the container */
     box-sizing: border-box; /* Makes padding not affect width/height */
+    font-family: "HanziPen SC", sans-serif;
 }
 
 .rotate-text {

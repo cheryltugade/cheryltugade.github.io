@@ -1,5 +1,5 @@
 /***
- * This script runs the interactive elements of Cheryl's Room of Useless Projects.
+ * This script runs the interactive elements of My Room of Useless Projects.
  */
 
 let currentSlide = 0;
@@ -33,7 +33,7 @@ window.addEventListener('resize', rotateMessageIfPortraitMobileDevice);
  * This function triggers the bounce-in animation for the 'Explore World' button when the splash screen loads.
  */
 window.onload = function() {
-    const splashImage = document.querySelector('.splash-container img');
+    const splashImage = document.querySelector('#splash-enter-btn');
     setTimeout(() => {
         splashImage.classList.add('bounce-in');
     }, 500);
@@ -42,24 +42,24 @@ window.onload = function() {
 /***
  * This function adjusts the splash page dimensions depending on the viewport dimensions.
  */
-function adjustSplashPageElementDimensions() {
-    const splashImage = document.querySelector('.splash-container img');
-    if (visualViewport.width < visualViewport.height) {
-        splashImage.style.width = '60%';
-        splashImage.style.height = 'auto';
-    } else {
-        splashImage.style.width = '35%'
-        splashImage.style.height = 'auto';
-    }
-}
-// Adjust splash page dimensions upon load and resize
-window.addEventListener('load', adjustSplashPageElementDimensions);
-window.addEventListener('resize', adjustSplashPageElementDimensions);    
+// function adjustSplashPageElementDimensions() {
+//     const splashImage = document.querySelector('#splash-enter-btn');
+//     if (visualViewport.width < visualViewport.height) {
+//         splashImage.style.width = '60%';
+//         splashImage.style.height = 'auto';
+//     } else {
+//         splashImage.style.width = '35%'
+//         splashImage.style.height = 'auto';
+//     }
+// }
+// // Adjust splash page dimensions upon load and resize
+// window.addEventListener('load', adjustSplashPageElementDimensions);
+// window.addEventListener('resize', adjustSplashPageElementDimensions);    
 
 /***
  * This function triggers the transition to the room when the 'Explore World' button is clicked.
  */
-const splashImage = document.getElementById('splash-image');
+const splashImage = document.getElementById('splash-enter-btn');
 splashImage.addEventListener('click', () => {
     const splashContainer = document.querySelector('.splash-container');
     const background = document.querySelector('.background');
@@ -87,9 +87,17 @@ splashImage.addEventListener('click', () => {
 
 });
 
-/***
- * This function creates and shows slides for a pop-up based on input info.
- */
+function updateNavButtons(currentIndex, totalSlides) {
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    // Hide prev button on first slide
+    prevBtn.style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
+
+    // Hide next button on last slide
+    nextBtn.style.visibility = currentIndex === totalSlides - 1 ? 'hidden' : 'visible';
+}
+
 function createSlides(info) {
     const popupSlides = document.getElementById('popup-slides');
     popupSlides.innerHTML = '';
@@ -97,15 +105,27 @@ function createSlides(info) {
 
     // Only show popup-nav if there is more than one slide
     const popupNav = document.querySelector('.popup-nav');
+    const dotsContainer = document.getElementById('slide-dots');
+    dotsContainer.innerHTML = ''; // clear previous dots
+
     if (currentSlides.length === 1) {
         popupNav.style.display = 'none';
+        dotsContainer.style.display = 'none';
     } else {
         popupNav.style.display = 'flex';
+        dotsContainer.style.display = 'flex';
+
+        // Create a dot for each slide
+        currentSlides.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dotsContainer.appendChild(dot);
+        });
     }
 
-    // Update popupSlides depending on content in slide
+    // Create and append each slide
     currentSlides.forEach((slide, index) => {
-        // Create popup-slide div
         const slideDiv = document.createElement('div');
         slideDiv.className = 'popup-slide';
 
@@ -144,13 +164,13 @@ function createSlides(info) {
 
         if (slide.link && slide.image) {
             slideContent += `
-                <a class="popup-link" id="${slide.image_orientation}"href="${slide.link}" target="_blank">
-                    <img class="popup-linked-image" id ="${slide.image_orientation}" src="${slide.image}" alt="Slide ${index + 1}">
+                <a class="popup-link" id="${slide.image_orientation}" href="${slide.link}" target="_blank">
+                    <img class="popup-linked-image" id="${slide.image_orientation}" src="${slide.image}" alt="Slide ${index + 1}">
                 </a>
             `;
         } else if (slide.image) {
             slideContent += `
-                <img class="popup-image" id ="${slide.image_orientation}" src="${slide.image}" alt="Slide ${index + 1}">
+                <img class="popup-image" id="${slide.image_orientation}" src="${slide.image}" alt="Slide ${index + 1}">
             `;
         }
 
@@ -158,26 +178,32 @@ function createSlides(info) {
             slideContent += `<p class="popup-text">${slide.text.replace(/\n/g, '<br>')}</p>`;
         }
 
-        // Update slideDiv innerHTML to have slideContent
         slideDiv.innerHTML = slideContent;
-
-        // Update popupSlides to have slideDev
         popupSlides.appendChild(slideDiv);
     });
-    
-    // Show first slide
+
+    // Show the first slide
     showSlide(0);
 }
 
-/***
- * This function shows a slide in the pop-up depending on input index.
- */
 function showSlide(index) {
     const popupSlides = document.querySelectorAll('.popup-slide');
+    const dots = document.querySelectorAll('#slide-dots .dot');
+
     popupSlides.forEach(slide => slide.classList.remove('active'));
     popupSlides[index].classList.add('active');
+
+    if (dots.length) {
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+
     currentSlide = index;
+    updateNavButtons(currentSlide, popupSlides.length);
 }
+
+
 
 /***
  * This function creates slides and shows a pop-up for all objects when they are clicked.

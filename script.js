@@ -332,19 +332,29 @@ function updateLightSetting() {
     const roomVideo = document.querySelector('.room-video');
     const background = document.querySelector('.background');
     const lightImageSource = document.getElementById('light-image-source');
+    const popup = document.getElementById('popup');
 
     // Change background video and light image depending on current setting
     if (videoSource.src.includes('media/background-night.mp4')) {
         videoSource.src = 'media/background-day.mp4';
         lightImageSource.setAttribute('href', 'media/objects/light-day.png');
         background.style.background = 'white';
+
+        // Set popup to light mode
+        // popup.style.backgroundColor = 'white';
+        // popup.style.color = 'black';
     } else if (videoSource.src.includes('media/background-day.mp4')) {
         videoSource.src = 'media/background-night.mp4';
         lightImageSource.setAttribute('href', 'media/objects/light-night.png');
         background.style.background = 'black';
+
+        // Set popup to dark mode
+        // popup.style.backgroundColor = 'black';
+        // popup.style.color = 'white';
     }                
-    
+
     // Load and play the video
     roomVideo.load();
     roomVideo.play();
 }
+

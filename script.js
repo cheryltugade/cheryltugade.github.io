@@ -340,17 +340,12 @@ function updateLightSetting() {
         lightImageSource.setAttribute('href', 'media/objects/light-day.png');
         background.style.background = 'white';
 
-        // Set popup to light mode
-        // popup.style.backgroundColor = 'white';
-        // popup.style.color = 'black';
+        // updatePopupLightSetting(0);
     } else if (videoSource.src.includes('media/background-day.mp4')) {
         videoSource.src = 'media/background-night.mp4';
         lightImageSource.setAttribute('href', 'media/objects/light-night.png');
         background.style.background = 'black';
-
-        // Set popup to dark mode
-        // popup.style.backgroundColor = 'black';
-        // popup.style.color = 'white';
+        // updatePopupLightSetting(1);
     }                
 
     // Load and play the video
@@ -358,3 +353,46 @@ function updateLightSetting() {
     roomVideo.play();
 }
 
+/***
+ * This function updates the popup light settting.
+ */
+function updatePopupLightSetting(num) {
+    const popup = document.getElementById('popup');
+    // Option 1: Directly target the img inside the button
+    const prevBtnImg = document.querySelector('.nav-btn.prev-btn img');
+    const nextBtnImg = document.querySelector('.nav-btn.next-btn img');
+    const closeBtnImg = document.querySelector('.close-btn img');
+
+    // Change background video and light image depending on current setting
+    if (num === 0) {
+        popup.style.backgroundColor = 'white';
+        popup.style.color = 'black';
+        prevBtnImg.src = 'media/icons/leftarrow.png';
+        nextBtnImg.src = 'media/icons/rightarrow.png';
+        closeBtnImg.src = 'media/icons/cross.png';
+        document.querySelectorAll('.info-popup').forEach(el => {
+            el.style.border = 'none';
+            el.style.border = '1px solid #ddd';
+          });
+          document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.popup-title').forEach(el => {
+              el.style.color = '#333';
+            });
+          });
+          
+    } else {
+        popup.style.backgroundColor = 'black';
+        popup.style.color = 'white';
+        prevBtnImg.src = 'media/icons/leftarrow_white.png';
+        nextBtnImg.src = 'media/icons/rightarrow_white.png';
+        closeBtnImg.src = 'media/icons/cross_white.png';
+        document.querySelectorAll('.info-popup').forEach(el => {
+            el.style.border = 'none';
+          });  
+          document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.popup-title').forEach(el => {
+              el.style.color = 'white';
+            });
+          });          
+    }
+}

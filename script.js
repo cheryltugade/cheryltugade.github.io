@@ -497,6 +497,9 @@ function updateLightSetting() {
     const mapImgSrc = document.getElementById('map-img-src');
     const trainersImgSrc = document.getElementById('trainers-img-src');
     const speechBubbleImgSrc = document.getElementById('speech-bubble-img-src');
+    const couchImgSrc = document.getElementById('couch-img-src');
+    const booksImgSrc = document.getElementById('books-img-src');
+
 
 
     const popup = document.getElementById('popup');
@@ -510,7 +513,8 @@ function updateLightSetting() {
         mapImgSrc.setAttribute('href', 'media/objects/map.png');
         trainersImgSrc.setAttribute('href', 'media/objects/trainers.png');
         speechBubbleImgSrc.setAttribute('href', 'media/other/speech_bubble.png');
-
+        couchImgSrc.setAttribute('href', 'media/objects/couch.png');
+        booksImgSrc.setAttribute('href', 'media/objects/books.png');
 
         background.style.background = 'white';
         document.documentElement.style.setProperty('--pointer-cursor', "url('media/icons/pointer.png'), auto");
@@ -529,6 +533,8 @@ function updateLightSetting() {
         mapImgSrc.setAttribute('href', 'media/objects/map_night.png');
         trainersImgSrc.setAttribute('href', 'media/objects/trainers_night.png');
         speechBubbleImgSrc.setAttribute('href', 'media/other/speech_bubble_night.png');
+        couchImgSrc.setAttribute('href', 'media/objects/couch_night.png');
+        booksImgSrc.setAttribute('href', 'media/objects/books_night.png');
 
 
         background.style.background = 'black';

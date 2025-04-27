@@ -470,6 +470,9 @@ document.querySelectorAll('.hidden-object').forEach(object => {
         } else if (objectId == "light") {
             updateLightSetting();
             return
+        } else if (objectId == "books") {
+            speechBubble.style.left = '13%'
+            speechBubble.style.bottom = '23%'
         }
 
         speechBubble.style.visibility = 'visible';

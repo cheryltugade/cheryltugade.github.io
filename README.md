@@ -1,6 +1,6 @@
 # A Gallery of "Useless" Projects
 
-An interactive website showcasing "useless" projects I've worked on through the years.
+An interactive room showcasing "useless" projects I've worked on through the years.
 
 Explore here: [https://cheryltugade.github.io/](https://cheryltugade.github.io)
 

@@ -344,6 +344,11 @@ document.querySelector('.close-btn').addEventListener('click', () => {
 
 
 function changeSlide(num) { 
+    if (bouncingNextBtnOn) {
+        bouncingNextBtnOn = false;
+        document.querySelector('.next-btn').style.animation = 'none';
+    }
+    
     if (num === 0) {
         if (currentSlide == 0) {
             showSlide(currentSlides.length - 1)
@@ -371,10 +376,6 @@ document.querySelector('.prev-btn').addEventListener('click', () => {
  */
 document.querySelector('.next-btn').addEventListener('click', () => {
     changeSlide(1)
-    if (bouncingNextBtnOn) {
-        bouncingNextBtnOn = false;
-        document.querySelector('.next-btn').style.animation = 'none';
-    }
 });
 
 document.addEventListener('keydown', (event) => {

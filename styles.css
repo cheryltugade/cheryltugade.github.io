@@ -451,7 +451,7 @@ body {
     top: 10px;
     right: 10px;
     cursor: var(--pointer-cursor);
-    font-size: 24px;
+    width: max(2vw, 2vh);
     color: #666;
     background: none;
     border: none;

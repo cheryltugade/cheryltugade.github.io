@@ -348,7 +348,7 @@ function changeSlide(num) {
         bouncingNextBtnOn = false;
         document.querySelector('.next-btn').style.animation = 'none';
     }
-    
+
     if (num === 0) {
         if (currentSlide == 0) {
             showSlide(currentSlides.length - 1)
@@ -561,20 +561,22 @@ function updatePopupLightSetting(num) {
     if (num === 0) {
         popup.style.backgroundColor = 'white';
         popup.style.color = 'black';
-        prevBtnImg.src = 'media/icons/leftarrow.png';
-        nextBtnImg.src = 'media/icons/rightarrow.png';
+        prevBtnImg.src = 'media/icons/left_arrow.png';
+        nextBtnImg.src = 'media/icons/right_arrow.png';
         closeBtnImg.src = 'media/icons/cross.png';
         document.querySelectorAll('.info-popup').forEach(el => {
             el.style.border = '1px solid #ddd';
+            el.style.boxShadow = '0 5px 25px rgba(0, 0, 0, 0.2)';
         });
     } else {
         popup.style.backgroundColor = 'black';
         popup.style.color = 'white';
-        prevBtnImg.src = 'media/icons/leftarrow_white.png';
-        nextBtnImg.src = 'media/icons/rightarrow_white.png';
+        prevBtnImg.src = 'media/icons/left_arrow_night.png';
+        nextBtnImg.src = 'media/icons/right_arrow_night.png';
         closeBtnImg.src = 'media/icons/cross_white.png';
         document.querySelectorAll('.info-popup').forEach(el => {
-            el.style.border = 'none';
+            el.style.border = '1px solid #444';
+            el.style.boxShadow = '0 5px 25px rgba(255, 255, 255, 0.2)';
         });
     }
 }

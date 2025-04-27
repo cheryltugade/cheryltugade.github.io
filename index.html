@@ -4,8 +4,8 @@
     <title>A Gallery of "Useless" Projects</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Just+Me+Again+Down+Here&family=Ovo&family=Pangolin&display=swap" rel="stylesheet">
-        <link type="text/css" rel="stylesheet" href="normalize.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="normalize.css" />
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="media/icons/favicon.ico" type="image/x-icon">
     <meta charset="utf-8">
@@ -16,7 +16,7 @@
     <!-- Splash Page -->
     <div class="splash-container">
         <p class="splash-title">A Gallery of "Useless" Projects</p>
-        <img src="media/whitebasket.png" alt="Welcome" id="splash-prof-image">
+        <img src="media/other/wastebasket.png" alt="Welcome" id="splash-prof-image">
         <p class="splash-text">Hi, I'm Cheryl. I often feel torn between following my curiosity and working on something "useful".</p>
         <img src="media/icons/enter_gallery.png" alt="Enter" id="splash-enter-btn">
     </div>
@@ -44,61 +44,68 @@
 
             <!-- Room Background -->
             <video autoplay muted loop playsinline class="room-video">
-                <source src="media/background-day.mp4" type="video/mp4" id="video-source"> Your browser does not support the video tag.
+                <source src="media/backgrounds/background.mp4" type="video/mp4" id="video-source"> Your browser does not support the video tag.
             </video>
 
             <!-- Sound Effects -->
-            <audio id="hover-sound-welcome-mat" src="media/sound_effects/welcomemat.mp3" preload="auto"></audio>
-            <audio id="hover-sound-drawing" src="media/sound_effects/drawing.mp3" preload="auto"></audio>
+            <audio id="hover-sound-welcome-mat" src="media/sound_effects/welcome_mat.mp3" preload="auto"></audio>
+            <audio id="hover-sound-drawing" src="media/sound_effects/drawing.m4a" preload="auto"></audio>
             <audio id="hover-sound-notebook" src="media/sound_effects/notebook.mp3" preload="auto"></audio>
             <audio id="hover-sound-puzzle" src="media/sound_effects/puzzle.mp3" preload="auto"></audio>
-            <audio id="hover-sound-record-player" src="media/sound_effects/recordplayer.mp3" preload="auto"></audio>
+            <audio id="hover-sound-record-player" src="media/sound_effects/record_player.mp3" preload="auto"></audio>
             <audio id="hover-sound-tv" src="media/sound_effects/tv.mp3" preload="auto"></audio>
-            <audio id="hover-sound-whack-a-mole" src="media/sound_effects/whackamole.mp3" preload="auto"></audio>
+            <audio id="hover-sound-gumball-machine" src="media/sound_effects/gumball_machine.mp3" preload="auto"></audio>
+            <audio id="hover-sound-poster" src="media/sound_effects/poster.mp3" preload="auto"></audio>
+            <audio id="hover-sound-couch" src="media/sound_effects/couch.m4a" preload="auto"></audio>
+            <audio id="hover-sound-figurine" src="media/sound_effects/figurine.m4a" preload="auto"></audio>
+            <audio id="hover-sound-books" src="media/sound_effects/books.mp3" preload="auto"></audio>
+            <audio id="hover-sound-eggs" src="media/sound_effects/easter_eggs.m4a" preload="auto"></audio>
+
 
             <!-- Welcome Mat -->
              <!--   -->
-            <svg class="object" id="welcome-mat" viewBox="0 0 1183 516" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-welcome-mat" data-info='[
+            <svg class="object" id="welcome-mat" viewBox="0 0 1184 503" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-welcome-mat" data-info='[
+                    {"title": "Welcome to the gallery! It’s nice to meet you..."},
                     {"title": "Hi, I’m Cheryl Tugade",
-                    "text": "Welcome to A Gallery of \"Useless\" Projects—a home for all the random creative curiosities I’ve followed over the past few years. You might be wondering why I created it, and the purpose behind it…",
-                    "image": "media/profile_picture.JPEG",
+                    "text": "Hi, I’m Cheryl, and I built this website as a home for all the creative curiosities I’ve followed over the past few years. You might be wondering why I created it, and the purpose behind it…",
+                    "image": "media/mat_popup/photo1.jpg",
                     "image_orientation": "portrait",
                     "link": "https://www.cheryltugade.com"},
                     {"title": "I often feel torn between curiosity and \"usefulness\"",
-                    "text": "I often feel torn between following my curiosity and working on something others would deem \"useful\". I feel like I’m falling behind if I’m not focused on achieving success at one thing.",
-                    "image": "media/baby.JPG",
+                    "text": "I often feel torn between following my curiosity and working on something others would think is \"useful\". I feel like I’m falling behind if I’m not focused on achieving success at one thing.",
+                    "image": "media/mat_popup/photo2.jpg",
                     "image_orientation": "portrait",
                     "link": "https://www.cheryltugade.com"},
-                    {"title": "But I’ve spent the past few years following random curiosities",
+                    {"title": "I’ve spent the past few years following random curiosities",
                     "text": "Despite this, I’ve spent the past few years following random curiosities—from writing songs to trying standup to coding a mini-game. I wanted a way to bring together all these random projects I’ve pursued...",
-                    "image": "media/rockshow.jpg",
+                    "image": "media/mat_popup/photo3.jpg",
                     "image_orientation": "portrait",
                     "link": "https://www.cheryltugade.com"},
                     {"title": "So, I built this website",
-                    "text": "So, I built this website. A Gallery of \"Useless\" Projects. A way to challenge my idea of what’s \"useless\" and what’s not. It’s also a reminder to myself: keep making stuff you find interesting and cool. After all, if you find it cool, maybe someone else will too...",
-                    "image": "media/prof2.jpg",
+                    "text": "So, I built this website. A Gallery of \"Useless\" Projects. A way to challenge my idea of what’s \"useless\" and what’s not. It’s also a reminder to myself: <strong>keep making stuff you find interesting and cool.</strong> After all, if you find it cool, maybe someone else will too...",
+                    "image": "media/mat_popup/photo4.jpg",
                     "image_orientation": "portrait",
                     "link": "https://www.cheryltugade.com"},
                     {"title": "If that’s you... email me!",
-                    "text": "If that’s you... let me know! I’d love to be friends :) Email: cheryl@tugade.net",
-                    "image": "media/prof3.PNG",
+                    "text": "If that’s you... let me know! I’d love to be friends. My email is <a href=\"mailto:cheryl@tugade.net?subject=I’m+from+A+Gallery+of+%22Useless%22+Projects\" target=\"_blank\">cheryl@tugade.net</a> :)",
+                    "image": "media/mat_popup/photo5.jpg",
                     "image_orientation": "portrait",
-                    "link": "https://www.cheryltugade.com"}
+                    "link": "mailto:cheryl@tugade.net?subject=I’m+from+A+Gallery+of+%22Useless%22+Projects"}
                 ]'>
-                <image href="media/objects//welcomemat.png" />
+                <image href="media/objects/welcome_mat.png" />
             </svg>
 
-            <!-- Whack-a-mole -->
-            <svg class="object" id="whack-a-mole" viewBox="0 0 688 991" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-whack-a-mole" data-info='[
+            <!-- Gumball Machine -->
+            <svg class="object" id="gumball-machine" viewBox="0 0 483 1083" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-gumball-machine" data-info='[
                     {"title": "I took a standup comedy class from June - July 2024."},
                     {"youtube_link": "https://www.youtube.com/embed/ng4yCfxj9yw?si=egSuOY5ismL-lKy9"}
                 ]'>
-                <image href="media/objects/whackamole.png" />
+                <image href="media/objects/gumball_machine.png" />
             </svg>
 
             <!-- Record Player -->
-            <svg class="object" id="record-player" viewBox="0 0 745 583" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-record-player" data-info='[
-                    {"title": "I released music from June 2018 - Nov 2021."},
+            <svg class="object" id="record-player" viewBox="0 0 688 651" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-record-player" data-info='[
+                    {"title": "I released original music from June 2018 - Nov 2021."},
                     {
                     "spotify_link": "https://open.spotify.com/embed/track/4Z69VsztWnCw7whBorLVfL?utm_source=generator"},
                     {"spotify_link": "https://open.spotify.com/embed/track/0J1Q4oT4eW3oaTMVa16qsM?utm_source=generator"},
@@ -106,7 +113,7 @@
                     {"spotify_link": "https://open.spotify.com/embed/track/4ZS8ZgDfl0h9v8D4uYB3h2?utm_source=generator"},
                     {"spotify_link": "https://open.spotify.com/embed/track/15SzCx7pQYkhJxbY9m7tzr?utm_source=generator"}
                 ]'>
-                <image href="media/objects/recordplayer.png" />
+                <image href="media/objects/record_player.png" />
             </svg>
 
             <!-- Drawing -->
@@ -130,14 +137,30 @@
                     },
                     {
                         "image_orientation": "landscape",
+                        "image": "media/drawing_popup/drawing5.JPG"
+                    },
+                    {
+                        "image_orientation": "landscape",
+                        "image": "media/drawing_popup/drawing6.JPG"
+                    },
+                    {
+                        "image_orientation": "portrait", 
                         "image": "media/drawing_popup/drawing7.JPG"
+                    },
+                    {
+                        "image_orientation": "landscape",
+                        "image": "media/drawing_popup/drawing8.JPG"
+                    },
+                    {
+                        "image_orientation": "portrait",
+                        "image": "media/drawing_popup/drawing9.JPG"
                     }
                 ]'>
                 <image href="media/objects/drawing.png" />
             </svg>
 
             <!-- TV -->
-            <svg class="object" id="tv" viewBox="0 0 564 986" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-tv" data-info='[
+            <svg class="object" id="tv" viewBox="0 0 573 1007" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-tv" data-info='[
                     {"title": "I started performing my music live in 2018."},
                     {"youtube_link": "https://youtube.com/embed/DboV0z2ESrY"},
                     {"youtube_link": "https://www.youtube.com/embed/884d6uevGto?si=aJ3otr9i0wAxMfN7"},
@@ -150,104 +173,182 @@
             </svg>
 
             <!-- Puzzle -->
-            <svg class="object" id="puzzle" viewBox="0 0 316 423" preserveAspectRatio="xMidYMid meet"preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-puzzle" data-info='[
+            <svg class="object" id="puzzle" viewBox="0 0 313 423" preserveAspectRatio="xMidYMid meet"preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-puzzle" data-info='[
                     {"title": "I started creative coding in Oct 2024."},
                     {"title": "Guess Who Sent the Text",
-                    "text": "I coded a game for two people who text a lot. The game displays random texts between the two people, and you have to guess who sent the text. Check out the <a href=\"https://github.com/cheryltugade/GuessWhoSentTheText\" target=\"_blank\">code</a>.", 
+                    "text": "I created a game for two people who text a lot. The game displays random texts between the two people, and you have to guess who sent the text. Check out the <a href=\"https://github.com/cheryltugade/GuessWhoSentTheText\" target=\"_blank\">code</a>.", 
                     "image": "media/puzzle_popup/gwstt.gif",
                     "image_orientation": "landscape",
                     "link": "https://github.com/cheryltugade/GuessWhoSentTheText"},
                     {"title": "A Gallery of \"Useless\" Objects",
-                    "text": "I designed and coded this website using Figma, HTML/CSS and JavaScript. Check out the <a href=\"https://github.com/cheryltugade/cheryltugade.github.io\" target=\"_blank\">code</a>.", 
-                    "image": "media/puzzle_popup/cherylsworld.gif",
-                    "image_orientation": "landscape",
-                    "link": "https://github.com/cheryltugade/cheryltugade.github.io"},
-                    {"title": "On Definitions",
-                    "text": "I coded an animated exploration of how experiences shape our definitions in collaboration with creative writer Mallika Chennupaty.", 
-                    "image": "media/puzzle_popup/ondefinitions.jpg",
+                    "text": "I drew, designed, and coded this website you’re on right now. Check out the <a href=\"https://github.com/cheryltugade/cheryltugade.github.io\" target=\"_blank\">code</a>.", 
+                    "image": "media/puzzle_popup/goup.jpg",
                     "image_orientation": "landscape",
                     "link": "https://github.com/cheryltugade/cheryltugade.github.io"}
                 ]'>
                 <image href="media/objects/puzzle.png" />
             </svg>
+            <!--                     {"title": "On Definitions",
+                    "text": "I created an interactive exploration of how experiences shape our definitions. This project was in collaboration with writer Mallika Chennupaty.", 
+                    "image": "media/puzzle_popup/ondefinitions.jpg",
+                    "image_orientation": "landscape"}-->
 
             <!-- Notebook -->
             <svg class="object" id="notebook" viewBox="0 0 249 221" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-notebook" data-info='[
-                    {"title": "I interviewed people reimagining the traditional career path from Sep 2023 - Jan 2024."},
-                    {"title": "Tucker Bryant: He Left Google to Be a Poet",
-                    "text": "<a href=\"https://cheryltugade.medium.com/tucker-bryant-he-left-google-to-be-a-poet-4e75d09187c9\" target=\"_blank\">Read the article!</a>",
-                    "image": "media/notebook_popup/tucker.jpg",
-                    "image_orientation": "portrait",
-                    "link": "https://cheryltugade.medium.com/tucker-bryant-he-left-google-to-be-a-poet-4e75d09187c9"},
-                    {"title": "Derek Chung: From Tech to Poke Franchise Entrepreneur",
-                    "text": "<a href=\"https://cheryltugade.medium.com/derek-chung-from-tech-to-poke-franchise-entrepreneur-a31e87d0697e\" target=\"_blank\">Read the article!</a>", 
-                    "image": "media/notebook_popup/derek.jpg",
-                    "image_orientation": "portrait",
-                    "link": "https://cheryltugade.medium.com/derek-chung-from-tech-to-poke-franchise-entrepreneur-a31e87d0697e"},
-                    {"title": "Chelsea Chan: Music Artist and Web Developer",
-                    "text": "<a href=\"https://medium.com/@cheryltugade/chelsea-chan-music-artist-and-web-developer-be43c52d930a\" target=\"_blank\">Read the article!</a>", 
-                    "image": "media/notebook_popup/chelsea.jpg",
-                    "image_orientation": "portrait",
-                    "link": "https://medium.com/@cheryltugade/chelsea-chan-music-artist-and-web-developer-be43c52d930a"}
+                    {"title": "I wrote an answer on Quora every day from September - November 2023."},
+                    {
+                        "image_orientation": "landscape",
+                        "image": "media/notebook_popup/q1.jpg"
+                    },
+                    {
+                        "image_orientation": "landscape", 
+                        "image": "media/notebook_popup/q2.jpg"
+                    },
+                    {
+                        "image_orientation": "landscape",
+                        "image": "media/notebook_popup/q3.jpg"
+                    },
+                    {
+                        "image_orientation": "portrait",
+                        "image": "media/notebook_popup/q4.png"
+                    }
                 ]'>
                 <image href="media/objects/notebook.png" />
             </svg>
 
-            <!-- Clock -->
-            <svg class="hidden-object" id="clock" viewBox="0 0 368 542" preserveAspectRatio="xMinYMid meet" data-info='[
-                    {"title": "Nice try… nothing here sadly :("}
-                ]'>
-                <image href="media/objects/clock.png" />
+            <!-- Credits Poster -->
+            <svg class="object" id="credits-poster" viewBox="0 0 435 903" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-poster" data-info='[
+            {"title": "Credits for A Gallery of \"Useless\" Objects"},
+            {"title": "Code and Design", "text": "This website was coded and designed by me using Figma, HTML/CSS, and JavaScript. The code can be found <a href=\"https://github.com/cheryltugade/cheryltugade.github.io\" target=\"_blank\">here</a>.\n\nI was inspired by <a href=\"https://joshuas.world\" target=\"_blank\">joshuas.world</a>, <a href=\"https://joanramosrefusta.com\" target=\"_blank\">joanramosrefusta.com</a>, <a href=\"https://imaginaldisk.world/map\" target=\"_blank\">imaginaldisk.world/map</a>, <a href=\"https://clarakirkpatrick.com\" target=\"_blank\">clarakirkpatrick.com</a>, and <a href=\"https://bruno-simon.com\" target=\"_blank\">bruno-simon.com</a> in the making of this website. I highly recommend checking their websites out!"},
+            {"title": "Drawings", "text": "The wastebasket in the start page and Credits poster is from <a href=\"https://www.onlygfx.com/office-trash-bin-png-transparent-svg-vector/\" target=\"_blank\">OnlyGFX</a>.\n\nThe following objects were loosely inspired by images I found online: <a href=\"https://images.app.goo.gl/NXQWRvys9bCmFHMSA\" target=\"_blank\">light</a>, <a href=\"https://images.app.goo.gl/FwTBRnRPEFTK27fTA\" target=\"_blank\">puzzle</a>, <a href=\"https://images.app.goo.gl/afuVYQqDvGGVydbb6\" target=\"_blank\">notebook</a>, <a href=\"https://images.app.goo.gl/E2WzGLVr4HXX7BPk8\" target=\"_blank\">TV</a>, <a href=\"https://images.app.goo.gl/ZKfvVwPQfm4b529W8\" target=\"_blank\">stool</a>,  <a href=\"https://images.app.goo.gl/ywK9Posjg4tqY9cR8\" target=\"_blank\">shelf</a>.\n\nThe following objects were drawn by tracing over images I found online, which are free for personal use: <a href=\"https://images.app.goo.gl/TmHcpqiV2Homcj8V6\" target=\"_blank\">books</a> (‘Books Stack PNG Clipart’ from gallery.yopriceville.com), <a href=\"https://images.app.goo.gl/VDZfDptqAiiRYWBS6\" target=\"_blank\">trainers</a> (‘Scott Sports Running Shoes’ by bulman from Wallpapers.com), <a href=\"https://unsplash.com/photos/black-and-blue-turntable-on-brown-wooden-side-table-wYrByI2RKx8?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash\" target=\"_blank\">record player</a> (‘black and blue turntable on brown wooden side table’ by Seth Doyle on Unsplash), <a href=\"https://unsplash.com/photos/green-fabric-sofa-fZuleEfeA1Q?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash\" target=\"_blank\">couch</a> (‘green fabric sofa’ by Phillip Goldsberry on Unsplash), <a href=\"https://unsplash.com/photos/blue-green-and-yellow-world-map-l68Z6eF2peA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash\" target=\"_blank\">world map</a> (‘blue, green, and yellow world map’ by Andrew Stutesman on Unsplash), <a href=\"https://unsplash.com/photos/brown-wooden-human-figure-on-black-surface-fcWrjVBqSrA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash\" target=\"_blank\">figurine</a> (‘brown wooden human figure on black surface’ by Phillip Goldsberry on Unsplash), <a href=\"https://unsplash.com/photos/brown-wooden-human-figure-on-black-surface-fcWrjVBqSrA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash\" target=\"_blank\">gumball machine</a> (‘a large gummy machine sitting in front of a yellow wall’ by Thomas Watson on Unsplash), <a href=\"https://unsplash.com/photos/basket-of-eggs-Jo2tCHAy-8E?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash\" target=\"_blank\">easter egg basket</a> (‘basket of eggs’ by Court on Unsplash). \n\nEverything else was originally drawn by me."},
+            {"title": "Sound Effects and Images", "text": "All sound effects were from <a href=\"https://pixabay.com/sound-effects\" target=\"_blank\">Pixabay</a>.\n\nThe sound effects for the folowing objects were by <a href=\"https://pixabay.com/users/freesound_community-46691455\" target=\"_blank\">freesound_community</a>: figurine, TV, puzzle, welcome mat, record player, gumball machine, books, notebook, drawing.\n\nThe sound effect for the credits poster was by <a href=\"https://pixabay.com/users/arunangshubanerjee-29054022\" target=\"_blank\">Arunanashu Banerjee</a>.\n\nThe sound effect for the couch was by <a href=\"https://pixabay.com/bg/users/ncone-34430863/\" target=\"_blank\">Sean Mendoza</a>.\n\nThe sound effect for the easter eggs was by <a href=\"https://pixabay.com/users/floraphonic-38928062\" target=\"_blank\">floraphonic</a>.\n\nThe book cover images (shown on second page after clicking the stack of books) are copyrighted by their respective publishers and/or cover artists. I am using it on this website under fair use for non-commercial, educational, and review purposes."},
+            {"title": "Thank you’s", "text": "Thank you to my little brother Orrin for coming up with night mode, helping draw the night sky animations, and being as excited about the website as me!\n\nThank you Mallika Chennupaty, Geena Yin, Michelle Tugade, and Zarmina Yousafzai for your ideas, feedback, and encouragement!"}
+            ]'>
+                <image href="media/objects/credits_poster.png" />
             </svg>
 
-            <!-- Couch -->
-            <svg class="hidden-object" id="couch" viewBox="0 0 1096 461" preserveAspectRatio="xMinYMid meet" data-info='[
-            {"title": "Nice try… nothing here sadly :("}
-        ]'>
-                <image href="media/objects/couch.png" />
+            <!-- Easter Eggs -->
+            <svg class="object" id="easter-eggs" viewBox="0 0 365 464" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-eggs" data-info='[
+                    {"title": "Congratulations! You’ve found the projects I wasn’t sure whether I would include..."},
+                    {"title": "jericho! improv and sketch comedy",
+                    "image": "media/easter_eggs_popup/jerichobanner.jpg",
+                    "image_orientation": "landscape",
+                    "link": "https://sites.google.com/berkeley.edu/jerichoimprov/home",
+                    "text": "I was part of <a href=\"https://sites.google.com/berkeley.edu/jerichoimprov/home\" target=\"_blank\">jericho! improv and sketch comedy</a>, UC Berkeley’s oldest improv team from Spring 2024-2025."},
+                    {"title": "San Francisco Half-Marathon",
+                    "text": "I ran the San Francisco half-marathon in Summer 2023.",
+                    "youtube_link": "https://www.youtube.com/embed/exBv47dm_48"},
+                    {"title": "Marketing for ‘Crazy Broke Asian’",
+                    "text": "I was a marketing consultant for the indie film ‘Crazy Broke Asian’ in Summer 2024.",
+                    "youtube_link": "https://www.youtube.com/embed/32GBjEVBJEQ"},
+                    {"title": "Peer Counselling",
+                    "image": "media/easter_eggs_popup/sspc.png",
+                    "image_orientation": "portrait",
+                    "link": "https://sspc.studentorg.berkeley.edu/",
+                    "text": "I became a trained peer counselor at <a href=\"https://sspc.studentorg.berkeley.edu/in\" target=\"_blank\">SSPC</a> in Fall 2024, where I got to provide anonymous counseling appointments for UC Berkeley students."},
+                    {"title": "ANova Hacks",
+                    "text": "I co-organized <a href=\"https://www.berkeleyanova.org/anovahacks\" target=\"_blank\">ANova Hacks</a> in Spring 2023, an annual free-of-charge hackathon for high school students from underserved communities.",
+                    "image": "media/easter_eggs_popup/anohacks.JPG",
+                    "image_orientation": "portrait",
+                    "link": "https://www.berkeleyanova.org/anovahacks"},
+                    {"title": "Eminem’s Rap God supersonic verse at 1.5x speed",
+                    "text": "I learned to rap Eminem’s Rap God supersonic verse at 1.5x speed sometime in 2020.", 
+                    "youtube_link": "https://www.youtube.com/embed/o1XreVWPo_I?si=IUtzbtbY_S35DY5p"}
+                ]'>
+                <image href="media/objects/easter_eggs.png" />
             </svg>
-            <!-- <svg class="object" id="couch" viewBox="0 0 1096 461" data-sound="hover-sound-notebook" preserveAspectRatio="xMinYMid meet" data-info='[
+
+            <!--                     {"title": "Live Storytelling for ‘Radical Civics’ Pilot",
+                    "text": "I told a 5-minute true story at a live storytelling event in March 2025.",
+                    "youtube_link": "https://www.youtube.com/embed/fpq1jWHrxDs"} -->
+
+            <!-- Figurine -->
+            <svg class="object" id="figurine" viewBox="0 0 116 299" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-figurine" data-info='[
+                    {"title": "I interviewed people reimagining the traditional career path from Sep 2023 - Jun 2024."},
+                    {"title": "Tucker Bryant: He Left Google to Be a Poet",
+                    "text": "<a href=\"https://cheryltugade.medium.com/tucker-bryant-he-left-google-to-be-a-poet-4e75d09187c9\" target=\"_blank\">Read the article!</a>",
+                    "image": "media/figurine_popup/tucker.jpg",
+                    "image_orientation": "portrait",
+                    "link": "https://cheryltugade.medium.com/tucker-bryant-he-left-google-to-be-a-poet-4e75d09187c9"},
+                    {"title": "Derek Chung: From Tech to Poke Franchise Entrepreneur",
+                    "text": "<a href=\"https://cheryltugade.medium.com/derek-chung-from-tech-to-poke-franchise-entrepreneur-a31e87d0697e\" target=\"_blank\">Read the article!</a>", 
+                    "image": "media/figurine_popup/derek.jpg",
+                    "image_orientation": "portrait",
+                    "link": "https://cheryltugade.medium.com/derek-chung-from-tech-to-poke-franchise-entrepreneur-a31e87d0697e"},
+                    {"title": "Chelsea Chan: Music Artist and Web Developer",
+                    "text": "<a href=\"https://medium.com/@cheryltugade/chelsea-chan-music-artist-and-web-developer-be43c52d930a\" target=\"_blank\">Read the article!</a>", 
+                    "image": "media/figurine_popup/chelsea.jpg",
+                    "image_orientation": "portrait",
+                    "link": "https://medium.com/@cheryltugade/chelsea-chan-music-artist-and-web-developer-be43c52d930a"},
+                    {"title": "The Creator of Wordle’s Advice: Don’t Try to Go Viral",
+                    "text": "<a href=\"https://cheryltugade.medium.com/the-creator-of-wordles-advice-don-t-try-to-go-viral-5aee27c964b7\" target=\"_blank\">Read the article!</a>\n\n(Disclaimer: This article was written about a talk of his I attended, I didn’t get to interview him)", 
+                    "image": "media/figurine_popup/josh.jpg",
+                    "image_orientation": "portrait",
+                    "link": "https://cheryltugade.medium.com/the-creator-of-wordles-advice-don-t-try-to-go-viral-5aee27c964b7"}
+                ]'>
+                <image href="media/objects/figurine.png" />
+            </svg>
+
+            <!-- 8-ball -->
+            <!-- <svg class="object" id="eight-ball" viewBox="0 0 241 294" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-whack-a-mole" data-info='[
+                    {"title": "Here’s something different: I made a virtual magic 8-ball for you."},
+                    {"title": "Ask it ‘What \"useless\" project should I start?’",
+                    "button": "Answer me"},
+                    {"title": "If anything the 8-ball said inspired you, I’d love to hear about it!",
+                    "text": "My email is cheryl@tugade.net :)"}
+                ]'>
+                <image href="media/objects/8-ball.png" />
+            </svg> -->
+
+            <!-- Books -->
+            <svg class="object" id="books" viewBox="0 0 249 269" preserveAspectRatio="xMinYMid meet" data-sound="hover-sound-books" data-info='[
+                    {"title": "I started reading consistently in March 2025."},
+                    {"title": "Some books I read", "image": "media/books_popup/books.png", "image_orientation": "portrait"}
+                ]'>
+                <image href="media/objects/Books.png" />
+            </svg>
+
+            <!-- Clock -->
+            <svg class="hidden-object" id="clock" viewBox="0 0 368 542" preserveAspectRatio="xMinYMid meet" data-info='[]'>
+                <image href="media/objects/clock.png" id="clock-img-src"/>
+            </svg>
+
+            <!-- Map -->
+            <svg class="hidden-object" id="map" viewBox="0 0 559 566" preserveAspectRatio="xMinYMid meet" data-info='[]'>
+                <image href="media/objects/map.png" id="map-img-src"/>
+            </svg>
+
+            <!-- Trainers -->
+            <svg class="hidden-object" id="trainers" viewBox="0 0 626 363" preserveAspectRatio="xMinYMid meet" data-info='[]'>
+                <image href="media/objects/trainers.png" id="trainers-img-src"/>
+            </svg>
+
+            <!-- Berkeley Flag -->
+            <svg class="hidden-object" id="berkeley-flag" viewBox="0 0 530 306" preserveAspectRatio="xMinYMid meet" data-info='[]'>
+                <image href="media/objects/berkeley_flag.png" id="berkeley-flag-img-src"/>
+            </svg>
+
+                <image href="media/objects/berkeley_flag.png" />
+            </svg>
+            <svg class="object" id="couch" viewBox="0 0 1253 501" data-sound="hover-sound-couch" preserveAspectRatio="xMinYMid meet" data-info='[
                     {"title": "I started a creative community with friends in August 2024."},
                     {"title": "In-between Creatives",
-                    "text": "In-between Creatives is a home for people on an ongoing and imperfect journey of creativity—<a href=\"https://www.instagram.com/inbetween_creatives/\" target=\"_blank\">come learn</a> from acclaimed artists, musicians, writers, and more!",
+                    "text": "We started <a href=\"https://forms.gle/8B1LkRgaxrdQLZCr6\" target=\"_blank\">In-between Creatives</a> for people who wish they made more time for creativity amidst daily responsibilites. So far, we’ve hosted workshops with indie filmmaker Célin Do, poet and keynote speaker Tucker Bryant, and graphic novelist Malaka Gharib!",
                     "image": "media/couch_popup/logo.jpeg",
                     "image_orientation": "portrait",
                     "link": "https://forms.gle/YfBFdQp63nK22ouv7"}
                 ]'>
                 <image href="media/objects/couch.png" />
-            </svg> -->
+            </svg>
 
-            <!-- {"title": "Congratulations! You’ve found the projects I wasn’t sure I would include but I still think are pretty cool..."},
-                    {"title": "jericho! improv and sketch comedy",
-                    "text": "I started taking improv classes in Spring 2023 because I thought it might help with my social anxiety. I eventually joined jericho! improv and sketch comedy, UC Berkeley’s oldest improv team from Spring 2024-2025."},
-                    {"title": "San Francisco Half-Marathon",
-                    "text": "I was really lazy at running in high school, so I didn’t think I’d be capable of running a half-marathon. I ran the SF half-marathon in summer 2023!"},
-                    {"title": "Peer Counselling",
-                    "text": "I’ve always considered becoming a therapist, so I decided to become a trained peer counselor in Fall 2024. I had the privilege of providing anonymous counseling appointments for students to talk through difficult challenges and emotions."},
-                    {"title": "Crazy Broke Asian Marketing",
-                    "text": "I found the trailer on YouTube for ‘Crazy Broke Asian’, an indie film about a closeted, depressed, Vietnamese-American pursuing the arts. It resonated so much that I cold-emailed them with my marketing ideas and got to be a marketing consultant in Summer 2024."},
-                    {"title": "ANova Hacks",
-                    "text": "Together with the my co-chair, I organized ANova Hacks in Spring 2023, a free hackathon for students from underresourced schools and underrepresented backgrounds. Many had never coded before, and it was one of the most meaningful events I got to be part of in college."},
-                    {"title": "Eminem’s Rap God supersonic verse at 1.5x speed",
-                    "text": "For fun, I learned to rap Eminem’s Rap God supersonic verse at 1.5x speed. Watch until the end to see my little brother Orrin show us his hot wheels.", 
-                    "youtube_link": "https://www.youtube.com/embed/o1XreVWPo_I?si=IUtzbtbY_S35DY5p"},
-                    {"title": "Credits",
-                    "text": "Everything was coded, drawn, and designed by me. Drawings were traced from X. Sound effects are from Pixabay. Orrin Tugade -- thank you for coming up with night mode, helping draw the night sky animations, and being as excited about Cheryl’s World as me. Mallika Chennupaty, Geena Yin, Michelle Tugade (aka mom), Zarmina Yousafzai - thank you for your feedback and encouragement. This project was inspired by joshuas.world, joanramosrefusta.com, and bruno-simon.com."},
-                    {"title": "I wrote an answer on Quora every day from September - November 2023. Here are some of my most popular answers."},
-                    {"title": "Why can you feel lonely even when surrounded by people?",
-                    "text": "Answer"},
-                    {"title": "Have you ever felt so alone that it made you sad?",
-                    "text": "Answer"},
-                    {"title": "Discuss a moment where you stepped out of your comfort zone. How did it shape the person you are today?",
-                    "text": "Answer"} -->
             <!-- Light -->
-            <svg class="hidden-object" id="light" viewBox="0 0 467 213" preserveAspectRatio="xMinYMid meet" data-info='[]'>
-                <image href="media/objects/light-day.png" id="light-image-source"/>
+            <svg class="hidden-object" id="light" viewBox="0 0 464 209" preserveAspectRatio="xMinYMid meet" data-info='[]'>
+                <image href="media/objects/light.png" id="light-img-src"/>
             </svg>
 
             <!-- Speech Bubble -->
             <svg class="speech-bubble" viewBox="0 0 592 384" preserveAspectRatio="xMinYMid meet" data-info='[]'>
-                <image href="media/speech-bubble.png" />
+                <image href="media/other/speech_bubble.png" id="speech-bubble-img-src"/>
             </svg>
 
             <!-- Popup -->
@@ -255,6 +356,7 @@
                 <button class="close-btn">
                     <img src="media/icons/cross.png" alt="Previous" class="btn-icon">
                 </button>
+                <!-- <p class="next-slide-text">Go to next slide</p> -->
                 <div class="slide-dots" id="slide-dots"></div>               
                 <div id="popup-slides"></div>
                 <div class="popup-nav">

@@ -4,6 +4,7 @@
 
 let currentSlide = 0;
 let currentSlides = [];
+let bouncingNextBtnOn = true;
 
 /***
  * This function determines if the user is on a mobile device or not.
@@ -131,9 +132,14 @@ function createSlides(info) {
 
         let slideContent = ``;
 
+
         if (slide.title) {
             slideContent += `<p class="popup-title">${slide.title}</p>`;
         } 
+
+        if (slide.button) {
+            slideContent += `<button onclick="toggleMessage(this)">${slide.button}</button>`
+        }
 
         if (slide.youtube_link) {
             slideContent += `
@@ -182,8 +188,110 @@ function createSlides(info) {
         popupSlides.appendChild(slideDiv);
     });
 
+    updatePopupTitlesAndText();
+
     // Show the first slide
     showSlide(0);
+}
+
+function updatePopupTitlesAndText() {
+    const videoSource = document.getElementById('video-source');
+
+    if (videoSource.src.includes('media/backgrounds/background.mp4')) {
+        document.querySelectorAll('.popup-title').forEach(el => {
+            el.style.color = 'black';
+        });
+        document.querySelectorAll('.popup-text').forEach(el => {
+            el.style.color = 'black';
+        });
+    } if (videoSource.src.includes('media/backgrounds/background_night.mp4')) {
+        document.querySelectorAll('.popup-title').forEach(el => {
+            el.style.color = 'white';
+        });
+        document.querySelectorAll('.popup-text').forEach(el => {
+            el.style.color = 'white';
+        });
+    }
+}
+
+function updateSlideDotColors() {
+    const videoSource = document.getElementById('video-source');
+    const dots = document.querySelectorAll('.slide-dots .dot');
+    const activeDot = document.querySelector('.slide-dots .dot.active');
+
+    if (videoSource.src.includes('media/backgrounds/background.mp4')) {
+        dots.forEach(dot => {
+                dot.style.backgroundColor = 'white';
+                dot.style.borderColor = '#333';
+        });
+        activeDot.style.backgroundColor = '#333'; // Active dot color for day
+    } else if (videoSource.src.includes('media/backgrounds/background_night.mp4')) {
+        dots.forEach(dot => {
+            dot.style.backgroundColor = 'black';
+            dot.style.borderColor = 'white';
+        });
+        activeDot.style.backgroundColor = 'white'; // Active dot color for night
+    }
+}
+
+function toggleMessage(button) {
+    const messages = [
+        "Join or start a community around an interest of yours", 
+        "Take an acting, public speaking, or improv class", 
+        "Run a 5k, 10k, or half-marathon",
+        "Learn how to draw",
+        "Make a list of 5 things that feel the most terrifying to do, and do them this year",
+        "Start a YouTube channel",
+        "Learn how to play an instrument you've always wanted to play",
+        "Cold email someone you admire and ask if you can interview them",
+        "Make a comedy skit video",
+        "Post on social media every day for 30 days",
+        "Start a blog or newsletter",
+        "Learn how to cook a dish you've always wanted to cook",
+        "Start a business",
+        "Volunteer for an org you believe in",
+        "Start a podcast with friends",
+        "Start a reading habit",
+        "Build a personal website",
+        "Learn a new sport you've always wanted to try",
+        "Start growing fruits and vegetables",
+        "Learn how to make sourdough from scratch",
+        "Learn how to code",
+        "Write a song",
+        "Learn how to speak a language you've always wanted to learn",
+        "Build something with your bare hands",
+        "Learn photography",
+        "Plan a solo trip",
+        "Live without social media for a month",
+        "Make a zine",
+        "Host an event for friends",
+        "Meditate every day for a month",
+    ];
+    let messageDiv = button.nextElementSibling;
+
+  if (!messageDiv || !messageDiv.classList.contains('message')) {
+    // First time: create message div and fade in
+    messageDiv = document.createElement('div');
+    messageDiv.classList.add('message');
+    messageDiv.dataset.index = 0;
+    messageDiv.textContent = messages[0];
+    button.insertAdjacentElement('afterend', messageDiv);
+    requestAnimationFrame(() => messageDiv.classList.add('visible'));
+  } else {
+    // Cycle to next message
+    let currentIndex = parseInt(messageDiv.dataset.index, 10);
+    let nextIndex = (currentIndex + 1) % messages.length;
+
+    // Reset fade, update text, then fade in
+    messageDiv.classList.remove('visible');
+
+    setTimeout(() => {
+      messageDiv.textContent = messages[nextIndex];
+      messageDiv.dataset.index = nextIndex;
+      // Trigger fade-in
+      requestAnimationFrame(() => messageDiv.classList.add('visible'));
+    }, 50); // Slight delay to allow class removal to take effect
+  }
 }
 
 function showSlide(index) {
@@ -199,12 +307,22 @@ function showSlide(index) {
         });
     }
 
+    updateSlideDotColors();
+
     currentSlide = index;
     updateNavButtons(currentSlide, popupSlides.length);
 }
 
+function setupDotClickHandlers() {
+    const dots = document.querySelectorAll('#slide-dots .dot');
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            showSlide(i);
+        });
+    });
+}
 
-
+    
 /***
  * This function creates slides and shows a pop-up for all objects when they are clicked.
  */
@@ -224,25 +342,48 @@ document.querySelector('.close-btn').addEventListener('click', () => {
     document.getElementById('popup').style.display = 'none';
 });
 
+
+function changeSlide(num) { 
+    if (num === 0) {
+        if (currentSlide == 0) {
+            showSlide(currentSlides.length - 1)
+        } else if (currentSlide > 0) {
+            showSlide(currentSlide - 1);
+        }
+    } else if (num === 1) {
+        if (currentSlide == currentSlides.length - 1) {
+            showSlide(0)
+        } else if (currentSlide < currentSlides.length - 1) {
+            showSlide(currentSlide + 1);
+        }
+    }
+}
+
 /***
  * This function navigates to the previous slide when the previous button is clicked.
  */
 document.querySelector('.prev-btn').addEventListener('click', () => {
-    if (currentSlide == 0) {
-        showSlide(currentSlides.length - 1)
-    } else if (currentSlide > 0) {
-        showSlide(currentSlide - 1);
-    }
+    changeSlide(0)
 });
 
 /***
  * This function navigates to the next slide when the next button is clicked.
  */
 document.querySelector('.next-btn').addEventListener('click', () => {
-    if (currentSlide == currentSlides.length - 1) {
-        showSlide(0)
-    } else if (currentSlide < currentSlides.length - 1) {
-        showSlide(currentSlide + 1);
+    changeSlide(1)
+    if (bouncingNextBtnOn) {
+        bouncingNextBtnOn = false;
+        document.querySelector('.next-btn').style.animation = 'none';
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') {
+        changeSlide(0)
+    } else if (event.key === 'ArrowRight') {
+        changeSlide(1)
+    } else if (event.key === 'Escape') {
+        closePopup()
     }
 });
 
@@ -258,10 +399,14 @@ objects.forEach((object) => {
             const sound = document.getElementById(soundId);
 
             // Adjust volume depending on the object
-            if (soundId == "hover-sound-drawing") {
-                sound.volume = 1;
+            if (soundId === "hover-sound-notebook") {
+                sound.volume = 0.8;
+            } else if (soundId === "hover-sound-eggs") {
+                sound.volume = 0.05;
+            } else if (soundId === "hover-sound-figurine" || soundId === "hover-sound-poster" || soundId === "hover-sound-tv") {
+                sound.volume = 0.1;
             } else {
-                sound.volume = 0.5;
+                sound.volume = 0.3;
             }
             
             // Play the sound
@@ -277,12 +422,17 @@ objects.forEach((object) => {
  * This function closes the pop-up when anywhere outside the pop-up is clicked.
  */
 window.addEventListener('click', function(event) {
+    closePopup()
+});
+
+
+function closePopup() {
     const popup = document.getElementById('popup');
 
     if (event.target !== popup && !popup.contains(event.target)) {
         popup.style.display = 'none';
     }
-});
+}
 
 /***
  * This function closes the tutorial pop-up when the got it butotn is clicked.
@@ -304,12 +454,18 @@ document.querySelectorAll('.hidden-object').forEach(object => {
 
         // Adjust position and make the speech bubble visible when the couch or light is clicked
         // Update light setting when the light is clicked
-        if (objectId == "couch") {
-            speechBubble.style.left = '54%'
-            speechBubble.style.bottom = '36%'
-        } else if (objectId == "clock") {
-            speechBubble.style.left = '14%'
+        if (objectId == "clock") {
+            speechBubble.style.left = '12%'
             speechBubble.style.bottom = '74%'
+        } else if (objectId == "map") {
+            speechBubble.style.left = '82.8%'
+            speechBubble.style.bottom = '65%'
+        } else if (objectId == "trainers") {
+            speechBubble.style.left = '71.5%'
+            speechBubble.style.bottom = '8%'
+        } else if (objectId == "berkeley-flag") {
+            speechBubble.style.left = '28%'
+            speechBubble.style.bottom = '66%'
         } else if (objectId == "light") {
             updateLightSetting();
             return
@@ -331,21 +487,55 @@ function updateLightSetting() {
     const videoSource = document.getElementById('video-source');
     const roomVideo = document.querySelector('.room-video');
     const background = document.querySelector('.background');
-    const lightImageSource = document.getElementById('light-image-source');
+    const lightImgSrc = document.getElementById('light-img-src');
+    const clockImgSrc = document.getElementById('clock-img-src');
+    const berkeleyFlagImgSrc = document.getElementById('berkeley-flag-img-src');
+    const mapImgSrc = document.getElementById('map-img-src');
+    const trainersImgSrc = document.getElementById('trainers-img-src');
+    const speechBubbleImgSrc = document.getElementById('speech-bubble-img-src');
+
+
     const popup = document.getElementById('popup');
 
     // Change background video and light image depending on current setting
-    if (videoSource.src.includes('media/background-night.mp4')) {
-        videoSource.src = 'media/background-day.mp4';
-        lightImageSource.setAttribute('href', 'media/objects/light-day.png');
-        background.style.background = 'white';
+    if (videoSource.src.includes('media/backgrounds/background_night.mp4')) {
+        videoSource.src = 'media/backgrounds/background.mp4';
+        lightImgSrc.setAttribute('href', 'media/objects/light.png');
+        clockImgSrc.setAttribute('href', 'media/objects/clock.png');
+        berkeleyFlagImgSrc.setAttribute('href', 'media/objects/berkeley_flag.png');
+        mapImgSrc.setAttribute('href', 'media/objects/map.png');
+        trainersImgSrc.setAttribute('href', 'media/objects/trainers.png');
+        speechBubbleImgSrc.setAttribute('href', 'media/other/speech_bubble.png');
 
-        // updatePopupLightSetting(0);
-    } else if (videoSource.src.includes('media/background-day.mp4')) {
-        videoSource.src = 'media/background-night.mp4';
-        lightImageSource.setAttribute('href', 'media/objects/light-night.png');
+
+        background.style.background = 'white';
+        document.documentElement.style.setProperty('--pointer-cursor', "url('media/icons/pointer.png'), auto");
+        document.documentElement.style.setProperty('--regular-cursor', "url('media/icons/cursor.png'), auto");
+
+        document.documentElement.style.setProperty('--link-color', '#0000ff'); // darker blue
+        document.documentElement.style.setProperty('--link-visited-color', '#800080'); // darker purple
+
+        updatePopupLightSetting(0);
+        document.getElementById("easter-eggs").style.display = "none";
+    } else if (videoSource.src.includes('media/backgrounds/background.mp4')) {
+        videoSource.src = 'media/backgrounds/background_night.mp4';
+        lightImgSrc.setAttribute('href', 'media/objects/light_night.png');
+        clockImgSrc.setAttribute('href', 'media/objects/clock_night.png');
+        berkeleyFlagImgSrc.setAttribute('href', 'media/objects/berkeley_flag_night.png');
+        mapImgSrc.setAttribute('href', 'media/objects/map_night.png');
+        trainersImgSrc.setAttribute('href', 'media/objects/trainers_night.png');
+        speechBubbleImgSrc.setAttribute('href', 'media/other/speech_bubble_night.png');
+
+
         background.style.background = 'black';
-        // updatePopupLightSetting(1);
+        updatePopupLightSetting(1);
+        document.getElementById("easter-eggs").style.display = "block";
+
+        document.documentElement.style.setProperty('--link-color', '#7aa9ff'); // lighter blue
+        document.documentElement.style.setProperty('--link-visited-color', '#c084fc'); // lighter purple
+
+        document.documentElement.style.setProperty('--pointer-cursor', "url('media/icons/pointer_night.png'), auto");
+        document.documentElement.style.setProperty('--regular-cursor', "url('media/icons/cursor_night.png'), auto");
     }                
 
     // Load and play the video
@@ -356,9 +546,12 @@ function updateLightSetting() {
 /***
  * This function updates the popup light settting.
  */
+
+// popup-title
+// popup-text
+// popup indicators
 function updatePopupLightSetting(num) {
     const popup = document.getElementById('popup');
-    // Option 1: Directly target the img inside the button
     const prevBtnImg = document.querySelector('.nav-btn.prev-btn img');
     const nextBtnImg = document.querySelector('.nav-btn.next-btn img');
     const closeBtnImg = document.querySelector('.close-btn img');
@@ -371,15 +564,8 @@ function updatePopupLightSetting(num) {
         nextBtnImg.src = 'media/icons/rightarrow.png';
         closeBtnImg.src = 'media/icons/cross.png';
         document.querySelectorAll('.info-popup').forEach(el => {
-            el.style.border = 'none';
             el.style.border = '1px solid #ddd';
-          });
-          document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.popup-title').forEach(el => {
-              el.style.color = '#333';
-            });
-          });
-          
+        });
     } else {
         popup.style.backgroundColor = 'black';
         popup.style.color = 'white';
@@ -388,11 +574,7 @@ function updatePopupLightSetting(num) {
         closeBtnImg.src = 'media/icons/cross_white.png';
         document.querySelectorAll('.info-popup').forEach(el => {
             el.style.border = 'none';
-          });  
-          document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.popup-title').forEach(el => {
-              el.style.color = 'white';
-            });
-          });          
+        });
     }
 }
+

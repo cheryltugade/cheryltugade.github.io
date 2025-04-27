@@ -2,10 +2,39 @@
  * This sheet determines the styling of Cheryl's World.
  */
 
+ html {
+    cursor: var(--regular-cursor);
+ }
 body {
     background: black;
+    font-family: "Source Sans 3", sans-serif;
+    cursor: var(--regular-cursor);
 }
 
+:root {
+    --pointer-cursor: url('media/icons/pointer.png'), auto;
+    --regular-cursor: url('media/icons/cursor.png'), auto;
+    --link-color: #0000ff; /* default light blue */
+    --link-visited-color: #800080; /* default light blue */
+  }
+
+  a:link {
+    color: var(--link-color);
+  }
+
+  a:visited {
+    color: var(--link-visited-color);
+  }
+
+
+  
+  
+  a, button, [role="button"], .clickable, .btn {
+    cursor: var(--pointer-cursor) !important;
+  }
+  
+  
+  
 /***
  * Background, room, and objects
  */
@@ -27,7 +56,7 @@ body {
     left: 50%;
     background-size: contain;
     transform: translate(-50%, -50%);
-    aspect-ratio: 1598 / 1036;
+    aspect-ratio: 2410 / 1662;
 }
 
 .room-video {
@@ -42,7 +71,7 @@ body {
 
 .object {
     position: absolute;
-    cursor: pointer;
+    cursor: var(--pointer-cursor);
     max-width: 100%;
     height: auto;
     width: auto;
@@ -50,60 +79,92 @@ body {
 
 @keyframes jingle {
     0% {
-        transform: scale(1.1) translateY(0.5px) translateX(0.5px) rotate(1deg);
+        transform: scale(1.05) translateY(0.5px) translateX(0.5px) rotate(1deg);
     }
     50% {
-        transform: scale(1.1) translateY(-0.5px) translateX(-0.5px) rotate(-1deg);
+        transform: scale(1.05) translateY(-0.5px) translateX(-0.5px) rotate(-1deg);
     }
     100% {
-        transform: scale(1.1) translateY(0.5px) translateX(0.5px) rotate(1deg);
+        transform: scale(1.05) translateY(0.5px) translateX(0.5px) rotate(1deg);
     }
 }
 
 .object:hover {
     animation: jingle 0.5s ease-in-out;
+    cursor: var(--pointer-cursor);
 }
 
 #welcome-mat {
     width: 23%;
-    left: 37.3%;
+    left: 37.5%;
     bottom: 0%;
 }
 
-#whack-a-mole {
-    width: 13%;
-    left: 77.6%;
-    bottom: 7%;
+#gumball-machine {
+    width: 10.5%;
+    left: 82.7%;
+    bottom: 5%;
 }
 
 #record-player {
-    width: 13.3%;
-    left: 62.8%;
-    bottom: 35%;
+    width: 14.5%;
+    left: 63.6%;
+    bottom: 32.7%;
 }
 
 #drawing {
-    width: 13%;
-    left: 80.3%;
-    bottom: 50%;
+    width: 12%;
+    left: 85.2%;
+    bottom: 38.5%;
 }
 
 #puzzle {
-    width: 6.1%;
-    left: 16.8%;
+    width: 6.6%;
+    left: 14.8%;
     bottom: 11.3%;
 }
 
 #notebook {
     width: 6%;
-    left: 20.8%;
+    left: 19.2%;
     bottom: 27%;
 }
 
 #tv {
-    width: 10.5%;
-    left: 14%;
+    width: 12%;
+    left: 12%;
     bottom: 32%;
+}
+
+#books {
+    width: 5.3%;
+    left: 7.8%;
+    bottom: 17.5%;
+}
+
+#easter-eggs {
+    display: none;
+    width: 8%;
+    left: 29.2%;
+    bottom: 2%;
+}
+
+#credits-poster {
+    width: 10.8%;
+    left: 88.2%;
+    bottom: 53%;
+}
+
+#figurine {
+    width: 3%;
+    left: 25.2%;
+    bottom: 42%;
+}
+
+#eight-ball {
+    width: 4.5%;
+    left: 19.2%;
+    bottom: 26%;
 }
 
 .hidden-object {
@@ -124,20 +185,42 @@ body {
 
 #clock {
     width: 7%;
-    left: 7.2%;
-    bottom: 66.2%;
+    left: 5%;
+    bottom: 66.6%;
 }
 
 #light {
     width: 9.5%;
-    left: 45%;
+    left: 45.2%;
     bottom: 79.5%;
 }
 
+#light:hover {
+    cursor: var(--pointer-cursor);
+}
+
 #couch {
-    width: 21.6%;
-    left: 33.4%;
-    bottom: 28%;
+    width: 26%;
+    left: 32.65%;
+    bottom: 27%;
+}
+
+#berkeley-flag {
+    width: 11.4%;
+    left: 17.2%;
+    bottom: 61.5%;
+}
+
+#map {
+    width: 11%;
+    left: 71.7%;
+    bottom: 52.5%;
+}
+
+#trainers {
+    width: 12%;
+    left: 60.2%;
+    bottom: 0%;
 }
 
 /***
@@ -149,13 +232,13 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.99);
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     width: 80%;
     height: 80%;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -175,7 +258,6 @@ body {
     height: 100%;
     left: 50%;
     transform: translate(-50%, 0%);
-    overflow: hidden;
     object-fit: contain;
 }
 
@@ -183,7 +265,7 @@ body {
     font-family: "HanziPen SC", sans-serif;
     font-weight: bold;
     font-size: min(3vw, 3vh);
-    color: #333;
+    color: black;
     text-align: center;
     width: 100%;
     max-height: 15%;
@@ -200,23 +282,16 @@ body {
 }
 
 .popup-linked-image {
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.3s ease;
     object-fit: contain;
     border-radius: 0.5vw;
 }
 
 .popup-linked-image:hover {
-    filter: brightness(0.9);
-    transform: scale(1.1);
+    transform: scale(1.02);
 }
 
 .popup-image {
-    border-radius: 8px;
-    flex-grow: 3;    
-    max-height: 100%;
-    max-width: 100%;
-    height: auto;
-    width: auto;
     object-fit: contain;
     border-radius: 0.5vw;
 }
@@ -234,14 +309,9 @@ body {
     font-family: "Source Sans 3", sans-serif;
     font-size: min(2vw, 2vh);
     line-height: 1.4;
-    color: #666;
+    color: black;
     text-align: center;
     max-width: 80%;
-    max-height: 20%;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
 }
 
 .popup-link#portrait{
@@ -334,9 +404,9 @@ body {
     pointer-events: auto;  /* Re-enable for buttons */
     background: none;
     border: none;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+    width: 4vw;
+    height: 4vw;
+    cursor: var(--pointer-cursor);
     padding: 0;
     display: flex;
     align-items: center;
@@ -361,6 +431,17 @@ body {
 
 .next-btn {
     margin-right: 1vw;
+    animation: bounce 1.5s infinite ease-in-out;
+}
+
+/* Define the bouncing animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* bounce up 10px */
+  }
 }
 
 .btn-icon {
@@ -373,12 +454,22 @@ body {
     position: absolute;
     top: 10px;
     right: 10px;
-    cursor: pointer;
+    cursor: var(--pointer-cursor);
     font-size: 24px;
     color: #666;
     background: none;
     border: none;
     padding: 5px;
+    z-index: 9999;
+}
+
+.next-slide-text {
+    position: absolute;
+    top: 35%;
+    right: 1vw;
+    font-size: 1vw;
+    width: 30px;
+    color: black;
     z-index: 9999;
 }
 
@@ -397,14 +488,12 @@ body {
     gap: 2px;
 }
 
-
 .slide-dots .dot {
-    width: 10px;
-    height: 10px;
+    width: 1vw;
+    height: 1vw;
     border-radius: 50%;
     background-color: white;
-    border: 1px solid #333;
-    opacity: 0.5;
+    border: 1.5px solid #333;
     transition: opacity 1s, background-color 0.3s;
 }
 
@@ -450,7 +539,7 @@ body {
 }
 
 #splash-enter-btn {
-    cursor: pointer;
+    cursor: var(--pointer-cursor);
     opacity: 0;
     animation: none;
     transition: filter 0.3s ease;
@@ -486,12 +575,12 @@ body {
 }
 
 .splash-text {
-    font-size: max(1.5vw, 2vh);
+    font-size: max(1.6vw, 2vh);
     max-width: 50%;
     height: auto;
     padding-left: 10%;
     padding-right: 10%;
-    font-family: "Open Sans 3", sans-serif;
+    font-family: "Source Sans 3", sans-serif;
     font-style: normal;
     line-height: 1.5;
     color: white;
@@ -506,7 +595,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -519,10 +608,10 @@ body {
 
 .tutorial-content {
     background: white;
-    padding: 20px;
+    padding: 2%;
     border-radius: 10px;
     text-align: center;
-    max-width: 40%;
+    max-width: 60%;
     max-height: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transform: scale(0.8);
@@ -550,7 +639,7 @@ body {
 .tutorial-got-it-btn {
     position: relative;
     bottom: 0;
-    cursor: pointer;
+    cursor: var(--pointer-cursor);
     background: none;
     width: 30%;
     border: none;
@@ -594,3 +683,12 @@ body {
         display: flex;
     }
 }
+
+.message {
+    opacity: 0;
+    transition: opacity 3s ease;
+    margin-top: 5px;
+  }
+  .message.visible {
+    opacity: 1;
+  }

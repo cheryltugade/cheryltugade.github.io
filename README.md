@@ -1,7 +1,9 @@
-# Cheryl's World
+# A Gallery of "Useless" Projects
 
-Cheryl's World is an interactive portfolio website where users can click on objects in a room to explore my work.
-
-![vid-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/8a29da25-d63d-48f6-a2d8-c6e8587e0958)
+An interactive website showcasing "useless" projects I've worked on through the years.
 
 Explore here: [https://cheryltugade.github.io/](https://cheryltugade.github.io)
+
+
+<img width="1333" alt="goup" src="https://github.com/user-attachments/assets/e16d4c95-66d1-4f74-905e-3ec28f58404b" />
+

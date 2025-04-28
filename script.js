@@ -582,7 +582,7 @@ function updatePopupLightSetting(num) {
         popup.style.color = 'white';
         prevBtnImg.src = 'media/icons/left_arrow_night.png';
         nextBtnImg.src = 'media/icons/right_arrow_night.png';
-        closeBtnImg.src = 'media/icons/cross_white.png';
+        closeBtnImg.src = 'media/icons/cross_night.png';
         document.querySelectorAll('.info-popup').forEach(el => {
             el.style.border = '1px solid #444';
             el.style.boxShadow = '0 5px 25px rgba(255, 255, 255, 0.2)';

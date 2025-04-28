@@ -264,7 +264,7 @@ body {
 .popup-title {
     font-family: "HanziPen SC", sans-serif;
     font-weight: bold;
-    font-size: min(3vw, 3vh);
+    font-size: clamp(1rem, 2.5vw, 2rem); /* min(3vw, 3vh) */
     color: black;
     text-align: center;
     width: 100%;
@@ -272,6 +272,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     object-fit: contain;
+    margin: 1.25rem;
 }
 
 .popup-link {
@@ -307,11 +308,12 @@ body {
 
 .popup-text {
     font-family: "Source Sans 3", sans-serif;
-    font-size: min(2vw, 2vh);
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem); /* min(2vw, 2vh) */
     line-height: 1.4;
     color: black;
     text-align: center;
-    max-width: 80%;
+    max-width: 90%;
+    overflow:hidden;
 }
 
 .popup-link#portrait{
@@ -334,6 +336,11 @@ body {
     height: auto;
 }
 
+.popup-image-exception {
+    max-height: 60%;
+    width: auto;
+  }
+  
 .popup-image#portrait {
     width: auto;
     max-height: 70%;
@@ -459,16 +466,6 @@ body {
     z-index: 9999;
 }
 
-.next-slide-text {
-    position: absolute;
-    top: 35%;
-    right: 1vw;
-    font-size: 1vw;
-    width: 30px;
-    color: black;
-    z-index: 9999;
-}
-
 .close-btn:hover {
     filter: brightness(0.8);
     transform: scale(1.25);
@@ -485,8 +482,8 @@ body {
 }
 
 .slide-dots .dot {
-    width: 1vw;
-    height: 1vw;
+    width: 1.2vw;
+    height: 1.2vw;
     border-radius: 50%;
     background-color: white;
     border: 1.5px solid #333;
@@ -559,7 +556,7 @@ body {
 }
 
 .splash-title {
-    font-size: max(3.5vw, 5vh);
+    font-size: clamp(2.5rem, 3.5vw, 5rem); /* min(3.5vw, 5vh) */
     max-width: 50%;
     height: auto;
     font-family: "HanziPen SC", sans-serif;
@@ -571,7 +568,7 @@ body {
 }
 
 .splash-text {
-    font-size: max(1.6vw, 2vh);
+    font-size: clamp(1.25rem, 1.6vw, 2rem); /* min(1.6vw, 2vh) */
     max-width: 50%;
     height: auto;
     padding-left: 10%;
@@ -619,14 +616,14 @@ body {
 }
 
 .tutorial-title {
-    font-size: min(4vw, 4vh);
+    font-size: clamp(2rem, 4vw, 2.5rem); /* min(4vw, 4vh) */
     font-family: "HanziPen SC", sans-serif;
     color: black;
     margin: 0;
 }
 
 .tutorial-text {
-    font-size: min(2.4vw, 2.4vh);
+    font-size: clamp(1.25rem, 1.6vw, 1.75rem); /* min(2.4vw, 2.4vh) */
     font-family: "Source Sans 3", sans-serif;
     line-height: 1.6;
     color: black;
@@ -671,7 +668,7 @@ body {
 
 .rotate-text {
     font-family: "HanziPen SC", sans-serif;
-    font-size: min(8vw, 8vh);
+    font-size: clamp(3rem, 8vw, 6rem); /* min(8vw, 8vh) */
 }
 
 @media (max-width: 768px) and (orientation: portrait) {

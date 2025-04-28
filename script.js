@@ -175,9 +175,17 @@ function createSlides(info) {
                 </a>
             `;
         } else if (slide.image) {
-            slideContent += `
+            if (slide.image === "media/puzzle_popup/on_definitions.gif") {
+                slideContent += `
+                <img class="popup-image" style="max-height:60%" id="${slide.image_orientation}" src="${slide.image}" alt="Slide ${index + 1}">
+            `;
+
+            } else {
+                slideContent += `
                 <img class="popup-image" id="${slide.image_orientation}" src="${slide.image}" alt="Slide ${index + 1}">
             `;
+            }
+            
         }
 
         if (slide.text) {

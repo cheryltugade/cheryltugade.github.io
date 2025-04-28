@@ -5,10 +5,12 @@
  html {
     cursor: var(--regular-cursor);
  }
+
 body {
     background: black;
     font-family: "Source Sans 3", sans-serif;
     cursor: var(--regular-cursor);
+    -webkit-font-smoothing: antialiased;
 }
 
 :root {
@@ -262,14 +264,13 @@ body {
 }
 
 .popup-title {
-    font-family: "HanziPen SC", sans-serif;
-    font-weight: bold;
+    font-family: "Gloria Hallelujah", sans-serif;
     font-size: clamp(1rem, 2.5vw, 2rem); /* min(3vw, 3vh) */
     color: black;
     text-align: center;
     width: 100%;
+    line-height: 1.5;
     max-height: 15%;
-    overflow: hidden;
     text-overflow: ellipsis;
     object-fit: contain;
     margin: 1.25rem;
@@ -556,13 +557,13 @@ body {
 }
 
 .splash-title {
-    font-size: clamp(2.5rem, 3.5vw, 5rem); /* min(3.5vw, 5vh) */
+    font-size: clamp(2.5rem, 3vw, 5rem); /* min(3.5vw, 5vh) */
     max-width: 50%;
     height: auto;
-    font-family: "HanziPen SC", sans-serif;
+    font-family: "Gloria Hallelujah", sans-serif;
     font-style: normal;
     font-weight: bold;
-    line-height: 1;
+    line-height: 1.5;
     color: white;
     margin-bottom: 17.5px;
 }
@@ -617,9 +618,10 @@ body {
 
 .tutorial-title {
     font-size: clamp(2rem, 4vw, 2.5rem); /* min(4vw, 4vh) */
-    font-family: "HanziPen SC", sans-serif;
+    font-family: "Gloria Hallelujah", sans-serif;
     color: black;
     margin: 0;
+    line-height: 1.5;
 }
 
 .tutorial-text {
@@ -663,12 +665,13 @@ body {
     flex-direction: column;
     padding: 2rem; /* Add space inside the container */
     box-sizing: border-box; /* Makes padding not affect width/height */
-    font-family: "HanziPen SC", sans-serif;
+    font-family: "Gloria Hallelujah", sans-serif;
 }
 
 .rotate-text {
-    font-family: "HanziPen SC", sans-serif;
+    font-family: "Gloria Hallelujah", sans-serif;
     font-size: clamp(1rem, 7vw, 1.5rem); /* min(8vw, 8vh) */
+    line-height: 1.5;
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
